@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>연습문제2 - 그림과 같이 입력 양식을 구현하시오.</title>
+  </head>
+  
+    <h2>회원 가입 홈</h2>
+
+    <label for="name">이름 :</label>
+    <input type="text" id="name" placeholder="아이디를 입력하세요."/>
+    <br />
+
+    <label for="pw">비밀번호 :</label>
+    <input type="password" id="pw" placeholder="비밀번호를 입력하세요."/>
+    <br />
+
+    <label for="phone">핸드폰 :</label>
+    <input type="text" id="phone" placeholder="핸드폰을 입력하세요."/>
+    <br />
+
+    <label for="email">이메일 :</label>
+    <input type="email" id="email" placeholder="이메일을 입력하세요."/>
+    <br />
+
+    <label for="gen">성별</label>
+    <!-- 서버에서 (name)을 gend으로 받은 뒤 value로 값을 받음 -->
+    <input type="radio" name="gen" id="gen1" value="남성" />
+    <label for="gen1"> 남성</label>
+    <input type="radio" name="gen" id="gen2" value="여성" />
+    <label for="gen2">여성</label>
+    <br>
+
+    <label for="checkbox">취미</label>
+    <input type="checkbox" name="checkbox" id="hb1" value="걷기" />
+    <label for="hb1">걷기</label>
+    
+    <input type="checkbox" name="checkbox" id="hb2" value="달리기" checked />
+    <label for="hb2">달리기</label>
+    
+    <input type="checkbox" name="checkbox" id="hb3" value="자전거 타기" />
+    <label for="hb3">자전거 타기</label>
+    <br>
+
+    <label for="place">사는 곳 :</label>
+    <select name="place" id="place">
+      <option value="seoul">서울</option>
+      <option value="suwon" selected>수원</option>
+      <option value="busan">부산</option>
+      <option value="jeju">제주</option>
+    </select>
+    <br>
+
+    <button type="button" onclick="alert('회원가입이 완료되었습니다.')">회원가입</button>
+    
+  </body>
+</html>

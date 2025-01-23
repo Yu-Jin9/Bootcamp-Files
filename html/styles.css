@@ -1,0 +1,111 @@
+/* 전체 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #ffffff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+header .logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.search-bar input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.header-icons a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* 메인 피드 스타일 */
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.feed {
+  flex: 0 0 70%;
+}
+
+.post {
+  margin-bottom: 30px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+  flex: 0 0 25%;
+  padding: 10px;
+  background-color: #fafafa;
+  border-radius: 10px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #fafafa;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+}

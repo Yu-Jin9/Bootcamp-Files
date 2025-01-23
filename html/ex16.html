@@ -1,0 +1,69 @@
+C<CC%<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>입력양식 태그 - form</title>
+      <!-- 로그인, 회원가입 화면에서 사용자의 정보를 서버로 전송하는 용도 -->
+
+      <!-- 웹브라우저(또는 APP)가 서버에 데이터를 전송하는 방법 -->
+      <!-- 1. from 태그 통신 : GET/POST 메소드 -->
+      <!-- 2. WB 주소줄을 이용한 통신 : GET 메소드 -->
+      <!--  (a 태그 - 하이퍼링크) : GET 메소드 -->
+      <!-- 3. java script를 이용한 통신 : fetch함수, ajax함수, axios함수 -->
+      <!--                               GET/POST/PUT/PATCH/DELETES -->
+      <!--                (정보를 가져옴)읽기/쓰기/전체수정/부분수정/삭제 -->
+
+      <!-- HTTP GET방식 -->
+      <!--        127.0.0.1 -->
+      <!-- http://locahost:3000/login?id=admin&pw=1234 -->
+      <!-- h~0 까지만 진짜로  -->
+      <!-- http : 통신규약(프로토콜), 스케임 -->
+      <!-- :// : 구분자 -->
+      <!-- localhost(127.0.0.1) : 서버주소(IP), 내 컴퓨터가 localhost -->
+      <!-- 3000 : 포트번호, 프로그램마다 사용하는 인터넷 번호 -->
+      <!-- /login : 경로, 프로그램안의 경로 -->
+      <!-- ? : 구분자 -->
+      <!-- id=admin&pw=1234 id가 admin이고 pw가 1234 => Key-Value쌍 -->
+      <!-- 연습문제 답 -->
+      <!-- http://www.mystyle.com:8080/mypage/qna?phome=101012341234&address=한양 -->
+      <!-- 한글은 URL Encoding -->
+      <!-- 한양 : %ED%9C %EC%96%92 -->
+      <!--     : UTF-8 유니코드를 3바이트로 바꾸고, %기호를 사용해서 표시 -->
+      <!-- 모든 서버 및 시스템은 유니코드를 사용하지 않기에, 아스키 코드를 사용 -->
+
+      <!-- 도메인 네임(Domain Name) -->
+      <!-- IP주소(172.182.381.11) 숫자를 영문이나 한글명으로 바꿔서 사용한다. /-->
+      <!-- 도메인 네임 서버 -->
+      <!-- 도메인 네임을 IP주소를 바꿔주는 서버 -->
+      <!-- http://www.naver.com => 125.209.222.141 -->
+      <!-- 도메인을 구매하는 방법 : 가비아, 후이즈, 카페24, 아마본 Rourw53 -->
+      <!-- 붕어빵닷컴.kr-->
+
+      <!-- IP 주소 : 인터넷상의 유일한 PC 주소 -->
+      <!-- IPv4 -->
+      <!-- 0~255.0~255.0~155 -->
+      <!-- 127.0.0.1 : 내 Pc 주소 -->
+      <!-- 192.168.0.1 : 인트라넷 기본 주소, 무선 공유기(Iptime) -->
+
+      <!-- HTTP POST 방식 -->
+      <!-- http://localhost:3000:login -->
+      <!-- 실제 데이터는 http통신 패킷안에 body부분에 감춰서 전송됨 -->
+    </head>
+    <body>
+      <!-- form 태그 : input태그의 내용을 서버로 전송하는 태그 -->
+      <!-- action속성 : 서버주소 -->
+      <!-- method속성 : 전송방식 GET/POST -->
+      <!-- input태그 : form태그 안에서 사용자의 데이터를 담는 태그 -->
+      <!-- type속성 : text 문자열, password 문자열(암호), submit 전송 실행 버튼 -->
+      <!-- name 속성 : 서버에서 전송받는 Request Parameter, 매개변수 이름 -->
+      <!--           : void login(String id, String pw) -->
+
+      <form action="http://www.myserver.com">
+        <input type="text" name="id" /> <br />
+        <input type="password" name="pw" /> <br />ㄴ <input type="submit" />
+        <br />
+      </form>
+    </body>
+  </html>
+</CC%<!DOCTYPE>

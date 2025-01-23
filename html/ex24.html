@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시멘틱 태그</title>
+    <!-- Semantic 의미론적 -->
+    <!-- 웹페이지의 공통적인 공간 구성요소를 태그 형식으로 분류한 것 -->
+    <!-- 공통적인 구성요소 : 헤더(Header), 푸터(Footer), 메인(섹션), 사이드(Side), 네비게이션바(메뉴바, Nav) -->
+    <!-- div 태그와 기능적으로 똑같다. !!!! -->
+    <!-- header태그 : 상단공간 (헤더) -->
+    <!-- nav태그 : 네이게이션 (메뉴) -->
+    <!-- footer태그 : 바닥 공간 -->
+    <!-- main태그 : 주 콘텐츠 공간 (section + aside) -->
+    <!-- section : 주된 콘텐츠 -->
+    <!-- aside : 사이트 (왼족, 오른쪽) 공간 -->
+    <!-- *-----------------* -->
+    <!-- |   Header(Top)   | -->
+    <!-- *-----------------* -->
+    <!-- |        Nav      | -->
+    <!-- *-----------------*      -->
+    <!-- |      |          |      -->
+    <!-- |Aside | Section  | Main -->
+    <!-- |      |          |      -->
+    <!-- *-----------------* -->
+    <!-- |      Footer     | -->
+    <!-- *-----------------* -->
+    <!-- 거의 모든 웹 페이지가 이렇게 된다고 보면 됨 -->
+    <style>
+      ul,
+      li {
+        /* 이렇게 하면 한 줄 안에 다 들어가게 됨 */
+        display: inline;
+      }
+      * {
+        border: 1px, solid, skyblue;
+      }
+      /* float는 복잡하고 어렵기 때문에 가급적 사용하지 말기 */
+      /* flex box을 사용해서 레이아웃을 잡는다. */
+      section {
+        /* display : inline로 만들고, 오른쪽으로 정렬 */
+        float: right;
+        width: 80%;
+      }
+      aside {
+        /* display : inline로 만들고, 왼쪽으로 정렬 */
+        float: left;
+        width: 18%;
+      }
+      footer {
+        /* clear : float - right left 지워준다. block으로 돌아감 */
+        /* both는 왼쪽 오른쪽 둘 다를 의미함 */
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <header>헤더영역</header>
+    <nav>
+      <ul>
+        <li style="display: block"><a href="#">메뉴1</a></li>
+        <li style="display: block"><a href="#">메뉴2</a></li>
+        <li style="display: block"><a href="#">메뉴3</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <!-- p태그는 block속성이라 aside가 밀려남 -->
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+          quidem, porro repudiandae doloribus voluptatibus amet accusamus
+          architecto ab hic sit sed beatae sint provident et eos eaque nam nulla
+          laboriosam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+          quidem, porro repudiandae doloribus voluptatibus amet accusamus
+          architecto ab hic sit sed beatae sint provident et eos eaque nam nulla
+          laboriosam.
+        </p>
+      </section>
+      <aside>사이드</aside>
+    </main>
+    <footer>푸터 영역</footer>
+  </body>
+</html>

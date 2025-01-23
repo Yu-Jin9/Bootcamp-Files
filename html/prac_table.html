@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>연습문제 - 테이블 만들기</title>
+  </head>
+  <body>
+    <!-- px 단위를 나타내는 글자는 생략 간능 -->
+    <table border="1px" width="500px" height="300px">
+      <!-- caption은 테이블의 제목을 설정해줌 / 테이블의 첫번째 자식 요소여야 됨 -->
+      <caption style="color: rgb(11, 54, 40); font-size: 30px">
+        연습문제 - 테이블 만들기
+      </caption>
+      <!-- colgroup,col은 caption바로 다음에 써서 열의 상태를 먼저 알려줘야됨 -->
+      <colgroup>
+        <col style="background-color: skyblue" />
+        <!-- 두번째 열에는 아무 속성을 지정하지 않더라도 열의 갯수에 맞게 형태를 맞처줘야됨 -->
+        <col />
+        <col style="background-color: skyblue" />
+        <!-- 같 -->
+      </colgroup>
+      <!-- thead안에 한줄 이상의 행<tr>을 만들 수 있지만 thead를 여러개 생성할 수는 없음 -->
+      <thead>
+        <tr>
+          <th colspan="3" align="center" bgcolor="blue">
+            <font color="white">오늘의 수입/지출</font>
+          </th>
+        </tr>
+        <tr bgcolor="aqua">
+          <th>내용</th>
+          <th>수입</th>
+          <th>지출</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="center">월급</td>
+          <td align="right">1,000,000</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="center">점심값</td>
+          <td align="right"></td>
+          <td align="right">5,000</td>
+        </tr>
+        <tr>
+          <td align="center">부모님 선물</td>
+          <td align="right"></td>
+          <td align="right">30,000</td>
+        </tr>
+
+        <tr>
+          <th rowspan="3" bgcolor="aqua">총계</th>
+          <td align="center">수입</td>
+          <td align="center">지출</td>
+        </tr>
+        <tr>
+          <td align="center">1,000,000</td>
+          <td align="center">35,000</td>
+        </tr>
+        <tr>
+          <td align="center">남은돈</td>
+          <td align="center">965,000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="3">테이블의 밑바닥</th>
+          <!-- <td colspan="3">테이블의 밑바닥</td> -->
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- figure : 독립된 콘텐츠를 나타냄 / 문서의 내용과 구별되는 요소임-->
+    <!-- figcaption : 설명 글을 추가해줌 -->
+    <figure>
+      <!-- 각 이미지마다 설명글 추가 가능 / 다음 이미지는 다음 줄에 나옴 -->
+      <img src="img2.jpg" alt="짱구 그림" />
+      <figcaption style="padding: 2%; font-style: italic; font-weight: bold">
+        짱구 그림이지롱1~
+      </figcaption>
+      <img src="img2.jpg" alt="짱구 그림" />
+      <figcaption style="padding: 2%; font-style: italic; font-weight: bold">
+        짱구 그림이지롱2~
+      </figcaption>
+    </figure>
+    <!-- 
+    <figure>
+      <img src="img2.jpg" alt="짱구 그림" />
+      <img src="img2.jpg" alt="짱구 그림" />
+    /* 여러개의 이미지에 한번에 figcaption 사용 가능 이 경우 이미지가 (가로)한줄로 나옴*/
+      <figcaption style="padding: 2%; font-style: italic; font-weight: bold">
+        짱구 그림이지롱~
+      </figcaption>
+    </figure> -->
+
+    <img
+      src="img2.jpg"
+      alt="짱구 그림"
+      srcset="img3.jpg 1000w, img2.jpg 5000w"
+    />
+    <!-- srcset : 화면의 너비와 해상도에 따라 다른 이미지 파일 표시 -->
+    <!-- 너비 조건 지정 ->> 파일이름 너비w // w : 이미지 파일의 너비-->
+    <!-- 해상도 조건 지정 ->> 파일이름 해상도x // x : 장치의 픽셀 비율 -->
+    <br />
+    <object data="prac.pdf" type="" width="500" height="360"></object>
+    <br /><br /><br />
+
+    <!-- embed는 오래된 브라우저까지 사용가능 // src 속성을 이용해 다양한 멀티미디어 파일 삽입 -->
+    <embed src="prac.pdf" type="" width="500" height="360" />
+  </body>
+</html>

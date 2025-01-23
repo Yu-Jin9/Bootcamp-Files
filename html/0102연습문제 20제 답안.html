@@ -1,0 +1,189 @@
+<!-- 문제 8 -->
+<!-- 
+ <body>
+    <h1>해야 할 일</h1>
+    <ul>
+      <li>장보기</li>
+      <li>전등 교체하기</li>
+      <li>커피믹스 사기</li>
+      <li>
+        이사준비
+        <ul>
+          <li>짐정리</li>
+          <li>이사업체 선정</li>
+          <li>이삿날 날씨알아보기</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+-->
+<!-- 문제 9    
+  <table border="1px" width="300" height="150">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+          <td>80</td>
+        </tr>
+      </tbody>
+    </table> 
+-->
+
+<!-- 문제 10
+        <table border="1px" width="300">
+      <tr>
+        <th align="center">Name:</th>
+        <td>Bil Gates</td>
+      </tr>
+      <tr>
+        <th align="center">Telephone:</th>
+        <td>555 77 854</td>
+      </tr>
+      <tr>
+        <th align="center">Telephone:</th>
+        <td>555 77 855</td>
+      </tr>
+    </table> 
+  -->
+
+<!-- 문제 11
+     <img
+      src="https://www.w3schools.com/html/img_girl.jpg"
+      alt="이미지"
+      width="500"
+      height="600"
+    /> -->
+
+<!-- 문제 12
+       <head>
+    <title>문서 제목입니다.</title>
+    <style>
+      button {
+        border: none;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button">
+      <a href="https://www.w3schools.com"
+        ><img
+          src="https://www.w3schools.com/images/w3schools_green.jpg"
+          alt="아이콘"
+      /></a>
+    </button>
+  </body> -->
+
+<!-- 문제 13 -->
+<!-- <form>
+      <fieldset>
+        <legend>예약자 정보</legend>
+        <label for="name">예약자 :</label>
+        <input type="text" id="name" />
+        <br />
+        <label for="phone">연락처 :</label>
+        <input type="text" id="phone" />
+        <br />
+        <label for="num">예약인원 :</label>
+        <select name="num" id="num">
+          <option value="2명">2명</option>
+          <option value="3명">3명</option>
+          <option value="4명">4명</option>
+          <option value="5인 이상">5인 이상</option>
+        </select>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>일자 선택 및 시간 선택</legend>
+        <input type="date" name="date" id="2022-07-15" />
+        <input type="time" name="time" value="T14;24:00" />
+      </fieldset>
+      <br />
+
+      <button type="button" onclick="alert('예약이 완료되었습니다.')">
+        예약
+      </button>
+      <button type="button" onclick="alert('예약이 취소되었습니다.')">
+        취소
+      </button>
+    </form> -->
+
+<!-- 문제 14번 -->
+<!-- 
+    <form>
+      <h3>설문조사</h3>
+
+      <fieldset>
+        <legend>성별과 나이를 입력하세요.</legend>
+        <label for="gen">성별 :</label>
+        <input type="radio" name="gen" id="gen1" value="남자">
+        <label for="gen1">남자</label>
+        <input type="radio" name="gen" id="gen2" value="여자">
+        <label for="gen2">여자</label>
+        <label for="age">나이 :</label>
+        <input type="text" id="age">
+        <br>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>관심 분야를 선택하세요. (1개 이상)</legend>
+        <input type="checkbox" name="ckeck1" id="ck1" value="디지털 콘텐츠">
+        <label for="ck1">디지털 콘텐츠</label>
+        <input type="checkbox" name="ckeck2" id="ck2" value="웹프로그래밍">
+        <label for="ck2">웹프로그래밍</label>
+        <input type="checkbox" name="ckeck3" id="ck3" value="데이터베이스">
+        <label for="ck3">데이터베이스</label>
+        <input type="checkbox" name="ckeck4" id="ck4" value="전자출판">
+        <label for="ck4">전자출판</label>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>다음 문항에 대해 5점 척도로 답하세요.</legend>
+        <label for="ran1">본 세미나의 주제는 만족스러운가? 1</label>
+        <input type="range" value="1" min="1" max="5" step="1" id="ran1" >5</input>
+        <br />
+        <label for="ran2">본 세미나의 초청 강사는 만족스러운가? 1</label>
+        <input type="range" value="1" min="1" max="5" step="1" id="ran2" >5</input>
+        <br />
+        <label for="ran3">본 세미나의 강의 시간은 만족스러운가? 1</label>
+        <input type="range" value="1" min="1" max="5" step="1" id="ran3" >5</input>
+      </fieldset>
+      <br>
+
+      <label for="op">기타 의견 사항</label>
+      <br>
+      <textarea name="op" id="op" placeholder="의견을 적으세요."></textarea>
+      <br>
+      <br>
+
+      <button type="button" onclick="alert('완료되었습니다.')">확인</button>
+      <button type="button" onclick="alert('취소되었습니다.')">취소</button>
+    </form> -->
+
+<!-- 15번 -->
+<!--   <video
+      src="https://www.w3schools.com/html/mov_bbb.mp4"
+      height="180"
+      width="288"
+      autoplay
+      controls
+    ></video> -->
