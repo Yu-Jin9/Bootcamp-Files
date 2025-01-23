@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>div 태그에 배경 입히기</title>
+    <style>
+      div {
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
+        /* contain은 이미지의 가로 넒이를 틀에 맞춤 // 공백이나 잘림이 생길 수 있음 */
+        background-size: contain;
+        /* cover은 이미지의 세로 높이를 틀에 맞춤 // 공백, 잘림 생길 수 있음 */
+        background-size: cover;
+        /* 공백, 잘림이 생기지 않게 하려면 */
+        /* 틀의 해상도(정방형)에 맞춰서 이미지를 준비한다 */
+        background-position: 10px 20px;
+        /* 이미지의 시작 좌표 x y */
+      }
+      p {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div의 기본 -->
+    <!-- width : 부모태그의 넓이만큼 (100%) -->
+    <!--       : display:block 한 줄 차지() -->
+    <!-- height : 0px(콘텐츠 크기 만큼) -->
+    <div>DIV태그</div>
+  </body>
+</html>

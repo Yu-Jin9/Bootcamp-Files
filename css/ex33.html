@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>position 속성</title>
+    <style>
+      #static-box {
+        position: static;
+        background-color: skyblue;
+      }
+      #relative-box {
+        position: relative;
+        background-color: pink;
+        /* 원래 본인이 있던 왼쪽위의 모서리의 위치를 기준으로 움직인다고 생각하면 됨 */
+        top: 10px;
+        left: 10px;
+      }
+      #container {
+        position: relative;
+        background-color: rgb(255, 255, 164);
+        border: 1px solid red;
+        height: 50px;
+      }
+      #absolute-box {
+        position: absolute;
+        background-color: yellowgreen;
+        /* 부모태그(#container)의 기준으로 10이 움직인 것을 볼 수 있음 */
+        top: 20px;
+        left: 20px;
+      }
+      #fixed-box {
+        position: fixed;
+        bottom: 10px;
+        background-color: green;
+      }
+      #sticky-box {
+        position: sticky;
+        background-color: lightcoral;
+        top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="static-box">Static</div>
+    <div id="relative-box">Relative-box</div>
+    <!-- absolute는 한번 감싸줘야되며 해당 container를 relative로 설정해야 함 -->
+    <!-- 감싸주지 않으면 absolute는 body를 부모로 인식하고 그거를 기준으로 삼음 -->
+    <div id="container">
+      <div id="absolute-box">Absolute-box</div>
+    </div>
+    <!-- 화면의 크기 또는 스크롤이 움직여도 화면 상에서 항상 float으로 고정 되어있는 것 ex)메뉴 아이콘 -->
+    <div id="fixed-box">Fixed</div>
+    <!-- 네비게이션바 처럼 화면의 z에 고정되어 스크롤을 올리고 내려도 화면에 고정되어 있음 -->
+    <div id="sticky-box">
+      Sticky Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, qui
+      eius porro aliquam enim debitis voluptates culpa perferendis distinctio
+      saepe fuga provident incidunt natus dolorem neque deleniti laborum minus
+      perspiciatis.
+    </div>
+    Sticky Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, qui
+    eius porro aliquam enim debitis voluptates culpa perferendis distinctio
+    saepe fuga provident incidunt natus dolorem neque deleniti laborum minus
+    perspiciatis. Sticky Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Sed, qui eius porro aliquam enim debitis voluptates culpa perferendis
+    distinctio saepe fuga provident incidunt natus dolorem neque deleniti
+    laborum minus perspiciatis. Sticky Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Sed, qui eius porro aliquam enim debitis voluptates culpa
+    perferendis distinctio saepe fuga provident incidunt natus dolorem neque
+    deleniti laborum minus perspiciatis. Sticky Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Sed, qui eius porro aliquam enim debitis
+    voluptates culpa perferendis distinctio saepe fuga provident incidunt natus
+    dolorem neque deleniti laborum minus perspiciatis.
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- ex73 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      .wrap {
+        display: flex; /* display: flex */
+        flex-wrap: wrap; /* 자동 개행 */
+      }
+      .wrap > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* pc버젼 : 기본값 */
+      @media screen and (min-width: 960px) {
+        .header {
+          background-color: lightgreen;
+          flex: 1 100%;
+          height: 100px;
+        }
+        .section1 {
+          background-color: pink;
+          flex: 1 50%;
+          height: 200px;
+        }
+        .section2 {
+          background-color: hotpink;
+          flex: 1 50%;
+        }
+        .section3 {
+          background-color: deepskyblue;
+          flex: 1 50%;
+          height: 200px;
+        }
+        .section4 {
+          background-color: skyblue;
+          flex: 1 50%;
+        }
+        .ad {
+          background-color: plum;
+          flex: 1 50%;
+          height: 100px;
+        }
+        .info {
+          background-color: seagreen;
+          flex: 1 50%;
+        }
+        .footer {
+          background-color: aquamarine;
+          flex: 1 100%;
+          height: 100px;
+        }
+      }
+      /* 태블릿 */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        .header {
+          background-color: lightgreen;
+          flex: 1 80%;
+          height: 100px;
+          order: -1;
+        }
+        .section1 {
+          background-color: pink;
+          flex: 1 100%;
+          height: 100px;
+        }
+        .section2 {
+          background-color: hotpink;
+          flex: 1 100%;
+          height: 100px;
+        }
+        .section3 {
+          background-color: deepskyblue;
+          flex: 1 100%;
+          height: 100px;
+        }
+        .section4 {
+          background-color: skyblue;
+          flex: 1 100%;
+          height: 100px;
+        }
+        .ad {
+          background-color: plum;
+          flex: 1 20%;
+          height: 100px;
+          order: -1;
+        }
+        .info {
+          background-color: seagreen;
+          flex: 1 30%;
+          height: 100px;
+        }
+        .footer {
+          background-color: aquamarine;
+          flex: 1 70%;
+          height: 100px;
+        }
+      }
+      /* 모바일 */
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        .header {
+          background-color: lightgreen;
+          flex: 1 100%;
+          height: 100px;
+        }
+        .section1 {
+          background-color: pink;
+          flex: 1 50%;
+          height: 200px;
+        }
+        .section2 {
+          background-color: hotpink;
+          flex: 1 50%;
+          height: 200px;
+        }
+        .section3 {
+          background-color: deepskyblue;
+          flex: 1 50%;
+          height: 200px;
+        }
+        .section4 {
+          background-color: skyblue;
+          flex: 1 50%;
+          height: 200px;
+        }
+        .ad {
+          background-color: plum;
+          flex: 1 20%;
+          height: 100px;
+        }
+        .info {
+          background-color: seagreen;
+          flex: 1 80%;
+          height: 100px;
+        }
+        .footer {
+          background-color: aquamarine;
+          flex: 1 100%;
+          height: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <p>헤더</p>
+      </div>
+      <div class="section1">
+        <p>섹션1</p>
+      </div>
+      <div class="section2">
+        <p>섹션2</p>
+      </div>
+      <div class="section3">
+        <p>섹션3</p>
+      </div>
+      <div class="section4">
+        <p>섹션4</p>
+      </div>
+      <div class="ad">
+        <p>광고</p>
+      </div>
+      <div class="info">
+        <p>정보</p>
+      </div>
+      <div class="footer">
+        <p>푸터</p>
+      </div>
+    </div>
+  </body>
+</html>

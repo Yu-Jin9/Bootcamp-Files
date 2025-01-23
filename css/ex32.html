@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>구글 웹 폰트 적용하기</title>
+    <!-- 폰트 적용하는 방법 -->
+    <!-- 1. 사용자PC에 폰트 설치 되어있는 경우에만 -->
+    <!-- 2. 폰트파일(ttf, dtf) 함께 배포 -->
+    <!-- 3. 인터넷 상의 폰트 파일 사용 -->
+    <!-- 구글 웹 폰트 사이트 이용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .nanum-pen-script-regular {
+        font-family: "Nanum Pen Script", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .nanum-gothic-regular {
+        font-family: "Nanum Gothic", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .moirai-one-regular {
+        font-family: "Moirai One", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      h1:nth-of-type(odd) {
+        color: skyblue;
+      }
+      h1:nth-of-type(even) {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="nanum-pen-script-regular">대한민국 홍길동 12345!</h1>
+    <h2 class="nanum-gothic-regular">I want to go home. 12345~!</h2>
+    <h1 class="moirai-one-regular">대한민국 홍길동 12345!</h1>
+  </body>
+</html>

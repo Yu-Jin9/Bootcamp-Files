@@ -1,0 +1,198 @@
+/* 페이지의 기본 설정 (초기값) */
+.body-wrap {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  overflow: auto;
+  overflow-y: scroll;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+/* 중앙 배치 */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* header-box */
+.header {
+  border: 2px solid yellow;
+  position: relative;
+  width: 100%;
+  min-width: 1100px;
+  height: 91px;
+  border-bottom: 1px solid #351f67;
+  padding-top: 2%;
+}
+/* logo 이미지 */
+.logo a {
+  /* border: 2px solid hotpink; */
+  display: block;
+  width: 140px;
+  height: 47px;
+  background: url(https://img.megabox.co.kr/static/pc/images/common/ci/logo_new2.png)
+    center center no-repeat;
+}
+/* 최상단 바로가기 글씨 box 설정 */
+.top-of-top {
+  /* border: 2px solid red; */
+  position: absolute;
+  top: 15px;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+}
+.left-link {
+  margin-left: 15px;
+}
+.right-link {
+  margin-right: 15px;
+}
+.left-link a,
+.right-link a {
+  color: black;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+/* nav의 icon메뉴 설정 */
+.link-ic a {
+  display: block;
+  position: absolute;
+  top: 42px;
+  width: 36px;
+  height: 36px;
+  font-size: 0;
+  line-height: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+/* 목록 아이콘 */
+#list-ic {
+  left: 0px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-sitemap.png);
+}
+/* 검색 아이콘 */
+#search-ic {
+  left: 40px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-search.png);
+}
+/* 달력 아이콘 */
+#cal-ic {
+  right: 40px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-schedule.png);
+}
+/* 마이페이지 아이콘 */
+#my-ic {
+  right: 0px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-mymega.png);
+}
+
+/* nav 목록들 */
+.nav {
+  /* border: 2px solid orange; */
+  display: inline-flex;
+  width: 100%;
+}
+.nav ul {
+  /* border: 1px solid deepskyblue; */
+  list-style: none;
+  display: flex;
+}
+.nav ul li a {
+  /* border: 1px solid hotpink; */
+  text-decoration: none;
+  display: block;
+  position: absolute;
+  /* top: -38px; */
+  height: 38px;
+  text-indent: -9999px;
+  background-position: center 0;
+  background-repeat: no-repeat;
+}
+
+#movie {
+  width: 30px;
+  left: 166px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-movie.png);
+}
+#reserve {
+  width: 30px;
+  left: 256px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-reserve.png);
+}
+#theater {
+  width: 31px;
+  left: 345px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-theater.png);
+}
+#event {
+  width: 45px;
+  right: 347px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-event.png);
+}
+#store {
+  width: 44px;
+  right: 241px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-store.png);
+}
+#benefit {
+  width: 29px;
+  right: 150px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/gnb/gnb-txt-benefit.png);
+}
+
+/* nav하단 메뉴 */
+.bottom-nav {
+  background-color: #f8f8fa;
+  display: block;
+  position: static;
+  width: 100%;
+  height: 42px;
+}
+.bn-wrap {
+  float: left;
+  height: 42px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+#home {
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+  float: left;
+  width: 13px;
+  height: 100%;
+  margin: 5px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-home.png);
+}
+.bn-wrap a {
+  color: #777;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  float: left;
+  height: 42px;
+  margin: 0 0 0 25px;
+  padding: 0;
+  color: #666;
+}
+/* '>' 표시가 안나옴 */
+.bn-wrap a::before {
+  content: "";
+  width: 5px;
+  height: 42px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png)
+    no-repeat;
+}
+
+/* main화면 */
+#main-container {
+  width: 100%;
+}

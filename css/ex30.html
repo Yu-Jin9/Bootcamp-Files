@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <!-- - width, height의 기준을 설정
+         - content-box : 기본. 콘텐츠의 너비/높이 기준
+         - border-box : 콘텐츠 + padding + 테두리 선 굵기까지를 너비/높이로 정함 -->
+    <!-- - content-box 속성으로는 패딩 + 테두리선 굵기까지 고려해야됨
+         - 배치할 때 계산이 복잡해짐 ⇒ 그래서 border-box가 나옴 -->
+    <!-- *-------------*    *- -->
+    <!-- |   *------*  |    |  -->
+    <!-- | P |  C   |  B  M |  -->
+    <!-- |   *------*  |    |  -->
+    <!-- *-------------*    *- -->
+
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 10px solid black;
+        /* 이렇게 까지만 하면 내용물이 넘침 => overflow (잘라줘야됨)*/
+        overflow: hidden;
+        /* overflow: hidden;=> 내용물이 넘칠 경우 넘친 부분을 깔끔하게 잘라줌 but 넘친 부분은 잘려나가서 안보임 */
+        margin: 10px;
+        padding: 10px;
+      }
+      div:nth-child(1) {
+        box-sizing: content-box; /* w,h = c */
+        background-color: aqua;
+      }
+      div:nth-child(2) {
+        box-sizing: content-box; /* w,h = c + p + b */
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    content-box : W, H = 콘텐츠 크기
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum dicta
+      accusamus, fugiat corporis perspiciatis atque eligendi quos maiores quo
+      numquam nisi aliquid illo! Nam ducimus molestias illo, enim dolor
+      consectetur?
+    </div>
+
+    border-box : W, H = 콘텐츠 + 패딩 + 테두리선
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum dicta
+      accusamus, fugiat corporis perspiciatis atque eligendi quos maiores quo
+      numquam nisi aliquid illo! Nam ducimus molestias illo, enim dolor
+      consectetur?
+    </div>
+  </body>
+</html>
