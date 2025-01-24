@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 출력방법 - 1</title>
+    <script>
+      // ctrl + /(슬래쉬) : 한 줄 주석문
+      /*
+      여러줄
+      주석문
+    */
+      // JS는 단따옴표('')와 쌍따옴표("")를 구분하지 않음
+      // 둘 다 문자열로 인식함.
+
+      // alert("Hello JS 1");
+      // 단따옴표를 쓰고 저장을 누르면  prettier가 쌍따옴표로 바꿔버림
+      // alert("hello JS 2");
+      // prettier-ignore
+      // alert('hello JS3');
+      // 위처럼 prettier-ignore를 주석으로 달아 놓으면 prettier가 작동 안함(저 부분만)
+
+      // 이렇게 하면 출력문에서 " " 또는 ' '를 출력 가능함
+      // 안과 밖의 따옴표를 다르게 작성 -> 출력하고 싶은 따옴표를 안에 작성하기
+      // alert('hello JS3 - "단따옴표 안에 쌍따옴표 쓰기"');
+      // alert("hello JS3 - '쌍따옴표 안에 단따옴표 쓰기'");
+      // 같은 따옴표로 이중으로 중첩해서 쓰면 오류남
+
+      // 문자열 연결 연산자 +
+      // 1. 산술 연산자 10 + 20 = 30
+      // 2. 문자열 연결 연산자 10 + '20' = '1020'
+      alert("대한" + '민국');
+      alert(10 + 20);
+      alert(10 + "20");
+
+      // C/C++,, java, swift, kotlin : 타입 선언
+      // int num = 10; (:정수)
+      // var let const 변수 선언시
+      let num = 10; // 타입 추정으로 number타입(형)으로 선언
+      alert("num 값은 " + num);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class</title>
+    <script>
+      //  클래스 선언
+      class Person {
+        // class안에서 변수타입, 함수를 앞에 명시해줄 필요 없음
+        name = "홍길동";
+        walk() {
+          console.log(this.name + "는 걷는다.");
+        }
+      }
+
+      // 클래스 객체 생성
+      let person = new Person();
+      person.walk();
+
+      // 생성자 함수 : 객체 생성시 자동으로 호출되는 함수
+      // 용도 : 초기화
+      class Person2 {
+        // name ="";
+        constructor(name, age) {
+          console.log("constructor 호출됨");
+          // this.name : 멤버변수
+          // name : 매개변수
+          this.name = name;
+          this.age = age;
+        }
+      }
+      let person2 = new Person("홍길동", 33);
+      console.log(person2.name);
+      console.log(person2.age);
+
+      // get, set 함수
+      // 용도 : 값을 읽어가거나 설정되는 값을 필터링하는 기능
+      //        길이 미터, 인치
+      //        나이 : 0 ~200
+      class Person3 {
+        name = "";
+        constructor(name, age) {
+          console.log("생성자 함수");
+          this.name = name;
+          this.age = age;
+        }
+        get name() {
+          console.log("get");
+
+          console.log("name을 읽으면 자동호출됨");
+          return this._name + "님 어서오세요~"; // get함수에서는 "_"를 써야됨
+        }
+        set name(newValue) {
+          console.log("set");
+          // null이 아니고, empty도 아닌 상태인가?
+          if (newValue) {
+            if (String(newValue).length > 5) {
+              console.log("이름이 5글자 이상입니다.");
+            } else {
+              this._name = newValue;
+            }
+            this._name = newValue;
+          }
+        }
+      }
+      let person3 = new Person3("변사또", 37);
+      console.log(person3.name);
+    </script>
+  </head>
+  <body></body>
+</html>

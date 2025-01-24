@@ -1,0 +1,102 @@
+<!-- - 조건문 : if문 / switch문
+    - → 선택적인 실행이 가능하도록 하는 구문
+    - ** 패턴 (형식) **
+    - 소괄호 ( ) : 함수이름() , if() , switch() , for() , while()
+    - .중괄호 { } : 배열요소 { } , key.value객체 { }
+    - 대괄호 [ ] : 배열요소 [ ]
+    - if ( 조건식(절) ) { 조건식이 참일 때 수행되는 수행문(들) }
+    - 조건식 : True / False 중 하나, 논리.비교 연산자가 주로 사용됨 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문</title>
+
+    <script>
+      // ** if 문의 4가지 형식 **
+      // 1. 단일 if 문
+      if (true) {
+        document.write("True 입니다.<br>");
+      }
+      // 2. if else 문
+      if (false) {
+        document.write("true 입니다. <br>");
+      } else {
+        document.write("false 입니다. <br>");
+      }
+      // 3. if else if 문
+      if (true) {
+        // 조건식1
+        document.write("조건1이 true 입니다. <br>");
+      } else if (true) {
+        // 조건식2
+        document.write("조건1이 false, 조건2가 true 입니다. <br>");
+      } else {
+        document.write("조건1이 false 이고, 조건2도 false 입니다. <br>");
+      }
+      // 4. 중첩 if문 (if문 if 문이 들어감)
+      // -> if문은 3중 중첩이상 설계하면, 가독성이 떨어짐
+      //    1. 함수로 코드를 묶는다.
+      //    2. 클래스로 설계한다
+      if (ture) {
+        if (false) {
+          if (true) {
+            // 1.함수 호출
+          }
+        } else {
+        }
+      }
+
+      // 조건문에서 비교 연산
+      if (10 == 20) {
+        // 값 비교
+        document.write("같음");
+      } else {
+        document.write("같지 않음");
+      }
+
+      if (10 === "20") {
+        // '===' : type과 값이 모두 같은가?
+        document.write("같음");
+      } else {
+        document.write("같지 않음");
+      }
+
+      if ("abc" === "abc") {
+        document.write("같음");
+      }
+
+      // 연습문제 // 여기 적힌 것은 강사님 코드 / 내가 한 것은 ex15Q.html 파일에 있음
+      // 1. 1~10까지의 정수 중에 하나를 prompt에 입력 받고,
+      // 짝수면 "짝수 입니다.", 홀수면 "홀수 입니다."라고 출력
+      // 1~10 외의 수면, "그외의 수입니다." 출력
+      let num = Number(prompt("입력하세요."));
+      // 가장 많은 경우의 수를 먼저 처리한다.
+      // 리팩토링 - 한번 짠 코드를 다리 정리하는 것
+      // 가독성, 중복제거, 논리적
+      if (1 <= num && num <= 10) {
+        if (num % 2 == 0) {
+          document.write("짝수 입니다.");
+        } else {
+          document.write("홀수 입니다.");
+        }
+      } else {
+        document.write("그 외의 수 입니다.");
+      }
+      // 또는
+      if (1 > num || num > 10) {
+        document.write("그 외의 수 입니다.");
+        return;
+      }
+
+      // 2. 1~10까지의 정수 중에 하나를 prompt로 3개 입력받고, 총합을 출력하시오
+      let num1 = Number(prompt("입력하세요."));
+      let num2 = Number(prompt("입력하세요."));
+      let num3 = Number(prompt("입력하세요."));
+      document.write(num1 + num2 + num3);
+    </script>
+  </head>
+  <body></body>
+</html>

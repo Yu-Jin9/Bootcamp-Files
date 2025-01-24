@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0121 연습문제 (4) : CSS 선택자로 문서요소 선택하기</title>
+    <script>
+      window.onload = () => {
+        //연습문제
+        //1. id가 wrap인 div밑의 h1의 텍스트색상을 green로 바꾸시오.
+        let h1 = document.getElementsByTagName("h1");
+        h1[5].style.color = "green";
+        //2. 내용인 "제목태그3"인 객체의 color를 blue으로 변경하시오.
+        let tag3 = document.getElementsByClassName("headers");
+        tag3[0].style.color = "blue";
+        //3. 내용인 "제목태그4"인 객체의 color를 orange으로 변경하시오.
+        tag3[1].style.color = "orange";
+        //4. id가 'wrap'인 div의 border를 1px solid red로 바꾸시오.
+        let div = document.getElementsByTagName("div");
+        div[1].style.border = "1px solid red";
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="header-1">제목태그1</h1>
+    <h1 id="header-2">제목태그2</h1>
+    <h1 class="headers">제목태그3</h1>
+    <h1 class="headers">제목태그4</h1>
+    <h1 class="headers">제목태그5</h1>
+    <div id="wrap">
+      <div>
+        <h1>Wrapper</h1>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>입력폼 데이터 유효성 체크하기</title>
+    <script>
+      // 데이터 유효성 확인하기
+      // 1. 프론트엔드에서 JS로 확인
+      // 2. 백엔드에서 처리하기
+
+      // 프론트엔드에서 유효성확인
+      // 1. form 태그의 onsubmit함수 이용
+      // 2. JS에서 유효성 확인 후 직접 Form.submit 함수를 호출
+      // 3. JS에서 유효성 확인 후 fetch함수(axios함수)로 직접 서버와 통신
+
+      function checkValue1() {
+        let inputName = document.getElementById("name");
+        if (inputName.value) {
+          // 값 있으면
+          return true; // form통신이 정상 수행됨
+        } else {
+          // 값 없으면
+          alert("아이디가 없습니다.");
+          return false; // from 통신이 취소됨
+        }
+      }
+
+      function checkValue2() {
+        let form = document.myFormName;
+        // .찍고 name으로 가져올 수 있음
+        console.log(form);
+        let inputName = document.getElementById("name");
+        if (!inputName || inputName.length < 2) {
+          alert("아이디가 비어있거나 2자 이하입니다.");
+          return;
+        }
+        // form 전송을 해준다.
+        form.submit();
+
+        // fetch 함수를 사용하여 직접 전송한다.
+        fetch("http://myserver.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // JS객체를 문자열로 변환해주는 함수
+            name: "hong", // inputName.value
+            pass: "1234", // inputPass.value
+          }),
+        })
+          .then((res) => res.json()) // json(): 문자열을 JS객체로 바꿔주는 함수
+          .then((data) => {
+            console.log(data);
+            myFunc();
+          })
+          .catch((err) => console.error("Error", err));
+      }
+    </script>
+  </head>
+  <body>
+    <form
+      id="myForm"
+      name="myFormName"
+      action="http://www.myserver.com"
+      onsubmit="return checkValue1();"
+    >
+      <!-- onsubmit="checkValue1(); alert()" 이런식으로 한 문장 안에 여러개가 들어갈 때는 세미클론을 사용하고 하나만 들어갈 경우 생략해도 됨-->
+      <label for="name">이름</label> <br />
+      <!-- label의 for와 input 태그의 id를 맞춰서 써야됨 주의 -->
+      <input type="text" id="name" name="name" /> <br />
+      <label for="pass">비밀번호</label><br />
+      <input type="password" id="pass" name="pass" /> <br />
+      <label for="pass-check">비밀번호 확인</label> <br />
+      <input type="password" id="pass-check" name="pass-check" /> <br />
+      <br />
+      <!-- <input type="submit" value="로그인" /> -->
+      <!-- submit은 form과 연결이 되어서 데이터가 날아감(제출) -->
+      <!-- button에서 type을 button이라고 명시해두지 않으면 submit이 기본임 -->
+      <button type="submit">로그인(submit)</button>
+      <br />
+      <button type="button" onclick="checkValue2()">로그인(button)</button>
+    </form>
+  </body>
+</html>

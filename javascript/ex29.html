@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구조분해할당과 전개 연산자</title>
+    <script>
+      // 구조분해할당(비구조화 할당)
+      // 1. 배열의 구조할당
+      let array1 = [10, 20, 30];
+      console.log(array1[0]);
+      let [a, b, c] = [10, 20, 30];
+      console.log(a);
+      console.log(b);
+      console.log(c);
+
+      // 전개 (spread) 연산자
+      let [x, y, ...rest] = [10, 20, 30, 40, 50];
+      console.log(x);
+      console.log(y);
+      console.log(rest);
+
+      // 값 교환 (swap)
+      let [i, j] = [10, 20];
+      // 임시 변수를 만들어 3단계로 교환
+      let tmp = i;
+      i = j;
+      j = tmp;
+      // 한 줄 표현이 가능해짐
+      [i, j] = [j, i];
+      console.log(i, j); // 이런 표현도 가능해짐
+
+      //KV 객체의 구조할당 : 객체는 순번이 없음
+      let obj = {
+        apple: 1000,
+        banana: 2000,
+      };
+      let { apple, banana } = obj;
+
+      // 새로운 이름으로 할당
+      let { apple: f1, banana: f2 } = obj;
+      console.log(f1);
+      console.log(f2);
+
+      // 하나만 가져오기
+      let { apple: newFruit } = obj;
+      console.log(newFruit);
+
+      // 전개 연산자를 이용한 객체 생성
+      let pet = {
+        cat: 1000,
+        dog: 2000,
+        pig: 3000,
+      };
+      let ball = {
+        baseball: 1000,
+        soccer: 2000,
+        baseketball: 3000,
+      };
+      let favorit = {
+        ...pet, //pet의 key,value를 가져와줌
+        ...ball,
+        camping: 4000,
+      };
+      console.log(favorit);
+
+      // 객체 속성 제외
+      // let pet = {
+      //   cat: 1000,
+      //   dog: 2000,
+      //   pig: 3000,
+      // };
+      // pet에서 cat은 따로 가져오고 pet에서 나머지인 dog,pig는 rest2로 가져옴
+      const { cat, ...rest2 } = pet;
+      console.log(cat); //1000
+      console.log(rest2); // {dog:2000, pig:3000}
+
+      // 함수 인자(Argument) / 매개변수(Parameter)로 전개 연산자 사용
+      const nums = [10, 20, 30];
+      function sum(x, y, z) {
+        return x + y + z;
+      }
+      console.log(sum(...nums));
+
+      // 기본값으로 설정할 때 전개 연산자
+      const defaultSetting = { them: "dark", showSidebar: true };
+      const userSetting = { showSidebar: false };
+      // KV가 겹치면 뒤에 작성한 것이 KV로 덮어쓰기 됨
+      const finalSetting = { ...defaultSetting, ...userSetting };
+      console.log(finalSetting); //{them: 'dark', showSidebar: false}
+    </script>
+  </head>
+  <body></body>
+</html>

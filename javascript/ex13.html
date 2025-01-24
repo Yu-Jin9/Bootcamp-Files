@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>연습문제</title>
+    <script>
+      //1. 비교연산자 : < <= > >= == !=
+      //  1) 20은 30보다 작은지 true/false로 출력하시오.
+      //  2) 20은 30보다 같거나 작은지 true/false로 출력하시오.
+      //2. prompt함수로
+      //  백의 자리, 십의 자리, 일의 자리 숫자3개를 입력받고,
+      // 그 숫자를 출력하시오.
+      // 예) 3입력 2입력 5입력 => 325
+      //3. 연산자 우선순위를 조정하여(소괄호)
+      //   11이 출력되도록 하시오.
+      // console.log(10 - 4 / 2 + 4 * 2);
+
+      // 1번.
+      document.write("20은 30보다 작은가? : ");
+      document.write(20 < 30);
+      document.write("<br>");
+      document.write("20은 30보다 작거나 같은가? : ");
+      document.write(20 <= 30);
+      document.write("<br>");
+
+      // 2번.
+      let n1 = prompt("백의 자리 입력");
+      let n2 = prompt("십의 자리 입력");
+      let n3 = prompt("일의 자리 입력");
+      document.write("출력 결과 : " + (n1 + n2 + n3));
+      document.write("<br>");
+
+      // 3번.
+      console.log(10 - 4 / 2 + 4 * 2);
+      document.write("3번 문제 결과 값 : " + ((10 - 4) / 2 + 4 * 2));
+      // 10 - 2 + 8 = 16
+      // 6 / 2 = 3+ 8 = 11
+    </script>
+  </head>
+  <body></body>
+</html>

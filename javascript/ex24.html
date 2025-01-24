@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>타이머 관련 함수</title>
+    <script>
+      // setTimeout 함수 : 일정시간 후에 코드 호출
+      // setInterval 함수 : 일정시간마다 (주기적) 코드 호출
+      setTimeout(() => {
+        console.log("타이머 3초 지남");
+      }, 3000);
+      setInterval(() => {
+        console.log("1초마다 수행됨");
+        // console.log(new Date()); 이거는 우리나의 시간 형태는 아님
+        // 우리나라 시간 형태로 가져오는 방법
+        let time = new Date().toTimeString().split(" ")[0];
+        let date = new Date().toISOString().split(" ")[0];
+        console.log(date + " " + time); //2025-01-20 13:35:35
+      }, 1000);
+    </script>
+  </head>
+  <body></body>
+</html>

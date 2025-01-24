@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연산자</title>
+    <script>
+      let i = 10; // b0000...1010 4바이트 정수
+      // ++ : 자신에게 +1을 더하는 연산자
+      // A++ : A = A + 1
+      // A-- : A = A - 1
+      i++; // i=11
+      document.write("i = " + i + "<br>");
+      i--; // i=10
+      document.write("i = " + i + "<br>");
+      // 단항 연산자와 삼항 연산자를 남발하면 난독성 코드가 됨
+      // ++A : 먼저 +1 연산을 한 후에 다음 연산으로 넘어감
+      // A++ : 다른 연산이 이루어진 후 마지막에 +1 한다.
+      i = i++ + 10 + ++i;
+      // i=10 인데 i++해서 i=11이 됐고 거기에 10을 더해서 21인 상태인데
+      // ++i는 기존 i=10에+1을 해서 사용하기 때문에 결론적으로 21 + 11 => 32가 된 것임
+      document.write("i = " + i + "<br>");
+      // 단항/삼항 연산자를 가급적 1줄에 1개만 사용하자.
+
+      let j = 10;
+      j++;
+      document.write(j + "<br>");
+      ++j;
+      document.write(j + "<br>");
+
+      j = 10;
+      document.write(j++ + "<br>");
+      document.write(j + "<br>");
+      j = 10;
+      document.write(++j + "<br>");
+      document.write(j + "<br>");
+
+      // 이항 연산자 : 산술
+      document.write(10 + 3 + "<br>");
+      // 또는
+      document.write(10 + 3);
+      document.write("<br>");
+
+      // 나눗셈 (/)은 몫과 나머지가 나옴
+      document.write(10 / 3); // 3.333.... 나옴
+      document.write("<br>");
+      document.write(Math.floor(10 / 3)); // 소수점 버림 연산
+      document.write("<br>");
+      document.write(10 % 3); // 나머지
+      document.write("<br>");
+
+      // 연산자 우선순위 : 소괄호를 통해 정할 수 있음
+      // prettier-ignore
+      document.write(10 + 3 * 6 / 2 - 2);
+      document.write("<br>");
+      document.write(10 + (3 * 6) / 2 - 2);
+    </script>
+  </head>
+  <body></body>
+</html>

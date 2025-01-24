@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 Function</title>
+    <script>
+      // 함수 : 코드 뭉치에 이름을 붙여 놓은 것
+      // 용도
+      // 1. 코드 중복 제거 - 재사용성
+      // 2. 코드 이름을 붙여서 - 가독성
+      // 3. 기능적 분리/결합 - 모듈화
+
+      // function (함수 선언) / return (함수의 종료)
+
+      // **4가지 형식**
+
+      // 1. 매개변수 X 반환값 X
+      function myFunc1() {
+        // 실행문은 return하기 전에 작성.
+        console.log("myFunc1()");
+        return;
+      } // 여기까지가 함수의 선언
+      myFunc1(); // 함수를 호출
+
+      // 2. 매개변수 O 반환값 X
+      // param -> 그냥 매개변수명
+      function myFunc1(param) {
+        console.log("myFunc2()" + param);
+        return;
+      }
+      myFunc1("홍길동"); // 함수를 호출할 때 매개변수를 넣어서 호출
+
+      // 3. 매개변수 X 반환값 O
+      function myFunc3() {
+        return "홍길동2";
+      }
+      const name = myFunc3();
+      console.log(name);
+
+      // 4. 매개변수 O 반환값 O
+      function myFunc4(param) {
+        return param * 2;
+      }
+      console.log(myFunc4(2));
+
+      // 함수형 변수(익명함수)
+      // 함수를 변수처럼 선언해서 사용하는 것
+      // 변수는 매개변수로 전달이 가능함
+      // => 함수형변수도 전달이 가능하게 한 것
+      // 콜백함수(비동기처리)
+      // 비동기 처리 : 번역시간과 처리시간이 다름
+      // 예) 사용자의 반응(마우스 클릭), 통신 - 호출/응답 시간다름
+
+      let varfunc = function () {
+        // 원래는 function 옆에 함수의 이름이 와야되는데 여기서는 안씀 -> 그래서 익명함수라고 말함
+        console.log("varFunc()");
+        return;
+      };
+      varfunc();
+
+      // 화살표 연산자를 이용한 익명함수 구현
+      let varFunc2 = () => {
+        console.log("varFunc2");
+        return;
+      };
+      varFunc2();
+
+      // 매개변수 있는 익명함수 구현
+      let varfunc3 = (param) => {
+        console.log("param");
+      };
+      varfunc3("홍길동");
+
+      // 매개변수로 다른 함수를 호출하는 함수
+      let sum = (param1, param2) => {
+        return param1 + param2;
+      };
+      let sub = (param1, param2) => {
+        return param1 - param2;
+      }; // 일종의 추상화
+      function calc(param1, param2, method) {
+        return method(parma1, param2);
+      }
+      console.log(calc(10, 20, sum));
+      console.log(calc(10, 20, sub));
+
+      // 확장 : 버튼 눌렸을 때 처리해야할 코드
+      //      : 통신 응답되었을 때 처리해야 할 코드
+    </script>
+  </head>
+  <body></body>
+</html>

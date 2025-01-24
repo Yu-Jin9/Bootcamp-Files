@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 50제 풀이 - 35</title>
+
+    <script>
+      let students = prompt("투표받은 학생들").split(" ");
+      let vote = {};
+
+      for (let i = 0; i < students.length; i++) {
+        let name = students[i].trim();
+        if (!vote[name]) {
+          vote[name] = 1;
+        } else {
+          vote[name]++;
+        }
+      }
+
+      let winner = "";
+      let maxCnt = 0;
+
+      for (name in vote) {
+        if (vote[name] > maxCnt) {
+          maxCnt = vote[name];
+          winner = name;
+        }
+      }
+      console.log(`${winner}(이)가 총${maxCnt}표로 반장이 되었습니다.`);
+    </script>
+  </head>
+  <body></body>
+</html>
