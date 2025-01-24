@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>벤더 프리픽스</title>
+    <style>
+      /* 브라우저 별 벤더 프리픽스는 다음과 같다. 
+      IE or Edge	-ms-
+      Chrome	-webkit-
+      Firefox	-moz-
+      Safari	-webkit-
+      Opera	-o-
+      iOS Safari	-webkit-
+      Android Browser	-webkit-
+      Chrome for Android	-webkit- 
+    */
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: deeppink;
+        /* 크롬과 사파리 4.0 이상을 위한 코드 */
+        /* 웹 브라우저가 실험단계. 중간 단계일 경우 쓰면 됨 */
+        /* background: -webkit-linear-gradient(deeppink, deepskyblue); */
+        /* 파이어폭스 3.6 이상을 위한 코드 */
+        /* background: -moz-linear-gradient(deeppink, deepskyblue); */
+        /* CSS 표준 문법 */
+        background: linear-gradient(deeppink, deepskyblue);
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

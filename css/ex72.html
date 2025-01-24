@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>반응형웹과 Flex연결</title>
+    <style>
+      /* 초기화 코드 */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      /* Pc 해상도 */
+      .wrap {
+        display: flex;
+        flex-flow: column wrap;
+      }
+      .wrap div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        border: 1px solid hotpink;
+      }
+      .header {
+        flex-grow: 100%;
+        background-color: rgb(204, 255, 0);
+        height: 200px;
+      }
+      .nav {
+        background-color: yellow;
+      }
+      .main {
+        display: flex;
+        flex-flow: row wrap;
+      }
+      .section {
+        /* flex-grow, flex-shrink, flex-basis를 한 번에 설정하는 축약형임 */
+        flex-grow: 7;
+      }
+      .aside {
+        flex-grow: 3;
+      }
+      .ab {
+        flex: 1 1 50%;
+      }
+      /* Tablet 해상도 */
+
+      .ad {
+        flex: 1 20%;
+        order: 1;
+        height: 100%;
+      }
+      .main {
+        flex: 1 60%;
+        order: 2;
+      }
+      .info {
+        flex: 1 20%;
+        order: 3;
+      }
+      .footer {
+        flex: 1 100%;
+        order: 4;
+      }
+      /* Mobile 해상도 */
+    </style>
+  </head>
+  <body>
+    <!-- 전체 컨텐츠를 감싸는 div -->
+    <!-- 웹 만들 때 하나씩 만들어 두면 좋음 -->
+    <div class="wrap">
+      <!-- 헤더 -->
+      <div class="header"><p>헤더</p></div>
+      <!-- 네비 -->
+      <div class="nav"><p>네비바</p></div>
+      <!-- 메인 = 세션 + 사이드바 -->
+      <div class="main">
+        <div class="section"><p>세션</p></div>
+        <div class="aside"><p>사이드바</p></div>
+      </div>
+      <!-- 광고 -->
+      <div class="ab"><p>광고</p></div>
+      <!-- 정보 -->
+      <div class="info"><p>정보</p></div>
+      <!-- 푸터 -->
+      <div class="footer"><p>푸터</p></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>이미지 출력 : img태그</title>
+    <!-- 이미지 사이트 : 픽사베이 사이트 -->
+    <!-- image1.jpg : Landscape 4:3 비율 -->
+    <!-- image2.jpg : Portrate 3:4 비율 -->
+
+    <style>
+      #play-button {
+        background-image: url("play-button.png");
+        background-repeat: no-repeat;
+        width: 128px;
+        height: 128px;
+        border: none;
+        background-color: transparent;
+      }
+      button {
+        border: none;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- src : 이미지 파일 이름 -->
+    <!-- alt : 이미지가 없을 때 출력되는 대체문구 -->
+    <img src="image1.jpg" alt="카페이미지1" width="500" height="640" />
+    <!-- emg1의 해상도 : 1498 x 1920 -->
+    <!-- width가 500일 경우 : 
+          1498:1920 = 500:x 
+          1920*500 = 1498*x
+          1920*500 / 1498 = x 
+          x = 640-->
+
+    <img src="image2.jpg" alt="카페이미지2" height="280" width="500" />
+    <!-- 1280 x 719 -->
+    <!-- height = 280 일 경우 : width = 500 -->
+    <br />
+    <br />
+
+    <!-- 이미지 다운로드 링크 걸기 -->
+    <a href="#" download="image1.jpg">image1.jpg 다운로드</a>
+    <br />
+    <br />
+
+    <!-- 버튼 아이콘 사이트 : Flaticon.com -->
+    <button type="button" style="background: transparent">
+      <img src="play-button.png" alt="버튼" />
+    </button>
+
+    <button id="play-button"></button>
+
+    <!-- 더미 이미지 : 이미지가 준비 안된 상태에서 배치 / 구조 잡을 때 -->
+    <img src="http://via.placeholder.com/600x300" alt="" />
+    <img src="http://via.placeholder.com/300x100" alt="" />
+    <img src="http://via.placeholder.com/100x300" alt="" />
+  </body>
+</html>

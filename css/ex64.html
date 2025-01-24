@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>변환효과 - transition속성</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        /* 모든 속성, 2초 동안 */
+        transition: all 2s;
+      }
+      .box:hover {
+        width: 200px;
+        height: 200px;
+      }
+      .box:active {
+        background-color: deepskyblue;
+        opacity: 0.5;
+        font-size: 32px;
+        border: 5px solid hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">클릭!</div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>반응형웹 - 미디어쿼리 속성</title>
+    <style>
+      /* pc 해상도  */
+      @media screen and (min-width: 960px) {
+        body {
+          background-color: plum;
+        }
+      }
+      /* Tablet 해상도 */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        body {
+          background-color: green;
+        }
+      }
+      /* Mobile 해상도 */
+      /* 세로 모드일 경우 "and (orientation: portrait)" */
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        body {
+          background-color: deepskyblue;
+        }
+      }
+      /* 가로 모드일 경우 "and (orientation: landscape)" */
+      @media screen and (max-width: 767px) and (orientation: landscape) {
+        body {
+          background-color: hotpink;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>제목태그 h1</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, ratione
+      maxime. Qui a quia hic dolores provident facere, ad tempora dolorem amet,
+      aperiam velit laborum dignissimos quidem officiis id delectus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, ratione
+      maxime. Qui a quia hic dolores provident facere, ad tempora dolorem amet,
+      aperiam velit laborum dignissimos quidem officiis id delectus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, ratione
+      maxime. Qui a quia hic dolores provident facere, ad tempora dolorem amet,
+      aperiam velit laborum dignissimos quidem officiis id delectus.
+    </p>
+  </body>
+</html>

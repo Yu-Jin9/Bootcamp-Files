@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <!-- https://tailwindcss.com/docs/flex -->
+  <!-- https://tailwindcss.com/docs/width -->
+  <!-- https://tailwindcss.com/docs/gap -->
+
+  <!-- 
+        justify-content: center        - justify-center
+        justify-content: space-between - justify-between
+        align-items: flex-start        - items-start
+        align-items: center            - items-center
+        align-self: auto               - self-auto
+        align-slef: flex-start         - self-start
+        align-slef: flex-end           - self-end
+        flex: 1 1 0%                   - flex-1
+        flex: 1 1 auto                 - flex-auto
+        flex: 0 1 auto                 - flex-initial
+        flex: none                     - flex-none
+    -->
+
+  <body>
+    <!-- flex : display:flex -->
+    <div class="flex border-4 border-blue-300 m-3">
+      <!-- border-4 : border:4px solid lightgray -->
+      <!-- lorem5 -->
+      <div class="p-2 border-4 border-red-300 m-4">
+        hello Lorem ipsum dolor sit amet.
+      </div>
+      <!-- lorem*2 -->
+      <div class="p-2 border-4 border-red-300 m-4">
+        hello Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+        nobis nam consectetur nihil iste asperiores nesciunt in. Hic quos
+        molestiae sunt aliquam dolores omnis adipisci accusantium nostrum
+        deserunt tenetur. Veniam. Iste magnam sit nihil quo! Aperiam hic,
+        eligendi accusantium saepe laborum quod delectus. Voluptatem, in. Natus,
+        pariatur ut. Repudiandae, ab perspiciatis ut ipsam non nobis quidem
+        totam necessitatibus eveniet iste!
+      </div>
+      <div class="p-2 border-4 border-red-300 m-4">hello</div>
+      <div class="p-2 border-4 border-red-300 m-4">hello</div>
+      <div class="p-2 border-4 border-red-300 m-4">hello</div>
+    </div>
+
+    <!-- flex : display:flex -->
+    <!-- flex-col / flex-row(기본값) -->
+    <!-- flex-wrap => 줄바꿈 -->
+    <div class="flex flex-col flex-wrap border-2 border-blue-400 m-1">
+      <!-- border-4 : border:4px solid lightgray -->
+      <div class="p-2 border-4 border-red-300 m-1">hello</div>
+      <div class="p-2 border-4 border-red-300 m-1">
+        hello hello Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Atque nobis nam consectetur nihil iste asperiores nesciunt in. Hic quos
+        molestiae sunt aliquam dolores omnis adipisci accusantium nostrum
+        deserunt tenetur. Veniam. Iste magnam sit nihil quo! Aperiam hic,
+        eligendi accusantium saepe laborum quod delectus. Voluptatem, in. Natus,
+        pariatur ut. Repudiandae, ab perspiciatis ut ipsam non nobis quidem
+        totam necessitatibus eveniet iste!
+      </div>
+      <div class="p-2 border-4 border-red-300 m-1">hello</div>
+      <div class="p-2 border-4 border-red-300 m-1">hello</div>
+      <div class="p-2 border-4 border-red-300 m-1">hello</div>
+    </div>
+
+    <div class="flex flex-rox flex-wrap border-4 border-blue-400 m-5">
+      <!-- flex-1 => flex: 1 1 100% -->
+      <div class="flex-1 p-2 border-4 border-red-300 m-1">hello</div>
+      <div class="flex-1 p-2 border-4 border-red-300 m-1">hello</div>
+      <div class="flex-1 p-2 border-4 border-red-300 m-1">hello</div>
+      <div class="flex-1 p-2 border-4 border-red-300 m-1">hello</div>
+      <div class="flex-1 p-2 border-4 border-red-300 m-1">hello</div>
+    </div>
+
+    <div class="flex flex-rox flex-wrap border-4 border-red-300 m-5">
+      <div class="w-1/4 p-2 border-4 border-blue-400">hello</div>
+      <div class="w-1/4 p-2 border-4 border-blue-400">hello</div>
+    </div>
+    <!-- between정렬 -->
+    <div class="flex justify-between border-4 border-red-300 m-5">
+      <div class="p-2 border-4 border-blue-400">hello</div>
+      <div class="p-2 border-4 border-blue-400">hello</div>
+      <div class="p-2 border-4 border-blue-400">hello</div>
+      <div class="p-2 border-4 border-blue-400">hello</div>
+    </div>
+    <!-- 중앙정렬 -->
+    <div class="flex justify-center border-4 border-red-300 m-5">
+      <div class="p-2 border-4 border-blue-400">hello</div>
+      <div class="p-2 border-4 border-blue-400">hello</div>
+      <div class="p-2 border-4 border-blue-400">hello</div>
+      <div class="p-2 border-4 border-blue-400">hello</div>
+    </div>
+    <!-- 기본 정렬 -->
+    <div class="flex border-4 border-red-300 m-5">
+      <div class="p-2 border-4 border-blue-400">hello</div>
+      <div class="p-2 border-4 border-blue-400">hello</div>
+      <div class="p-2 border-4 border-blue-400">hello</div>
+      <div class="p-2 border-4 border-blue-400">hello</div>
+    </div>
+
+    <div
+      class="flex justify-center items-center w-80 h-80 border-4 border-red-300 m-3"
+    >
+      <!-- leading : text의 위쪽 margin (line-height개념과 유사 / 수치를 지정해서 띄움 / 별로..;)-->
+      <!-- leading 보다는 => flex justify-center items-center 이렇게 3가지 지정해서 사용하는게 나음 -->
+      <!-- text-center : text-align -->
+      <div class="text-center leading-9 w-32 h-16 p-2 border-4 border-blue-500">
+        15 hello
+      </div>
+    </div>
+
+    <!-- 반응형 웹과 tailwind css 연결 -->
+    <!-- https://tailwindcss.com/docs/responsive-design -->
+
+    <!-- Breakpoint prefix	Minimum width	CSS
+          sm	640px	@media (min-width: 640px) { ... }
+          md	768px	@media (min-width: 768px) { ... } => tablet
+          lg	1024px	@media (min-width: 1024px) { ... } =>pc
+          xl	1280px	@media (min-width: 1280px) { ... }
+          2xl	1536px	@media (min-width: 1536px) { ... } -->
+
+    <!-- md => pc 해상도를 말함 -->
+    <!-- md:flex-row flex-col => tablet일 때는 row 그 이상의 크기일 때는 col -->
+    <div class="flex md:flex-row flex-col border-4 border-red-300 m-3">
+      <div class="p-2 flex-1 border-4 border-blue-500 order-1">1 hello</div>
+      <div class="p-2 flex-1 border-4 border-blue-500 order-0">2 hello</div>
+      <div class="p-2 flex-1 border-4 border-blue-500 order-2">3 hello</div>
+      <div class="p-2 flex-1 border-4 border-blue-500 order-3">4 hello</div>
+    </div>
+
+    <div class="flex md:flex-row flex-col border-4 border-red-300 m-3">
+      <div class="p-2 flex-1 border-4 border-blue-500">1 hello</div>
+      <div class="p-2 flex-1 border-4 border-blue-500 order-first md:row">
+        2 hello
+      </div>
+      <div class="p-2 flex-1 border-4 border-blue-500">3 hello</div>
+      <div class="p-2 flex-1 border-4 border-blue-500">4 hello</div>
+    </div>
+  </body>
+</html>

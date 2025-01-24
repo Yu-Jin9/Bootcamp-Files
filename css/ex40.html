@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>텍스트나 콘텐츠의 정렬</title>
+    <!-- 수평정렬 : text-ailgn -->
+    <!-- 수직정렬 : vertical-align -->
+    <style>
+      .box {
+        border: 1px solid hotpink;
+      }
+      .text-left {
+        text-align: left;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .text-justify {
+        text-align: justify;
+      }
+
+      /* vertical-align */
+      /* vertical-align은 주로 인라인 요소와 테이블셀에 적용 */
+      div {
+        border: 1px solid skyblue;
+      }
+      .box2 {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border: 1px solid hotpink;
+      }
+      .baseline {
+        /* baseline, 기본값 */
+        vertical-align: baseline;
+      }
+      .top {
+        vertical-align: top;
+      }
+      .middle {
+        vertical-align: middle;
+      }
+      .bottom {
+        vertical-align: bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- text-align -->
+    <div class="box text-left">왼쪽 정렬</div>
+    <div class="box text-center">가운데 정렬</div>
+    <div class="box text-right">오른쪽 정렬</div>
+    <div class="box text-justify">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam sint sequi
+      laboriosam et quas neque quisquam excepturi quibusdam error saepe fuga,
+      magni, aut sit impedit. Nam similique voluptas sint rem.
+    </div>
+    <div class="box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam sint sequi
+      laboriosam et quas neque quisquam excepturi quibusdam error saepe fuga,
+      magni, aut sit impedit. Nam similique voluptas sint rem.
+    </div>
+
+    <!-- vertical-align -->
+    <div>
+      <span class="box2 baseline"></span>Baseline
+      <span class="box2 top"></span>Top <span class="box2 middle"></span>Middle
+      <span class="box2 bottom"></span>Bottoms
+    </div>
+  </body>
+</html>

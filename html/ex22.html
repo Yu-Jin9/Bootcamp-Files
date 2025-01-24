@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공간분할 태그 - 컨테이너 태그</title>
+    <!-- div태그, span태그 -->
+    <!-- div태그 : 수평 한 줄을 차지한다. css display속성의 block값 -->
+    <!-- span 태그: 한칸(컨텐츠너비)을 차지한다. css display: inline -->
+
+    <style>
+      body {
+        /* 다른 요소들과의 margin을 0으로함 */
+        margin: 0;
+      }
+      div,
+      span {
+        /* 테두리선 : 두께, 실선, 색상 */
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 한 줄 다 차지 -->
+    <div>더미문구 입니다.</div>
+    <div>더미문구 입니다.</div>
+    <div>더미문구 입니다.</div>
+
+    <!-- span은 자기 conent만큼만 차지, 줄바꿈 안됨 -->
+    <span>더미문구 입니다.</span>
+    <span>더미문구 입니다.</span>
+    <span>더미문구 입니다.</span>
+
+    <div>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+    </div>
+  </body>
+</html>

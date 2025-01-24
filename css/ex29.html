@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마진과 패딩</title>
+    <style>
+      body {
+        border: 10px solid pink;
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        border: 10px solid brown;
+        /* 상하좌우 마진 10px */
+        margin: 10px;
+        /* 상하 좌우 */
+        margin: 10px 20px;
+        /* 시계방향 */
+        margin: 10px 20px 30px 40px;
+        /* top, bottom, left, right로 각각 줄 수도 있음 */
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        /* 패딩 상하좌우 */
+        padding: 20px;
+      }
+      span {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span></span>
+    </div>
+  </body>
+</html>

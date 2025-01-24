@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>수평/수직 정렬 (align)</title>
+    <!-- 1. text-align
+         2. vertical-align
+         3. line-height
+         4. margin/padding
+         5. absolute, top, left, bottom, right
+         6. **flexbox : center ⇒ 모든 것들이 다 해결됨**
+         7. css grid : center → 최근에 나온 기술임 (아직 보편화 되지 않았음) -->
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .box1 {
+        border: 1px solid hotpink;
+        height: 100px;
+        /* 밑의 세가지 설정만으로도 중앙 정렬이 가능함 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box2 {
+        border: 1px solid deepskyblue;
+        /* text의 수평 정렬 / text-align으로는 수직 정렬이 안됨 */
+        /* text-align: center; */
+
+        /* 수직 정렬을 위해서 부모의 크기와 맞춤 */
+        /* border 없애면 영역의 크기가 똑같음 */
+        /* line-height: 100px; */
+
+        /* 사람이 눈으로 보면서 직접 설정해서 정렬하는 것임 */
+        /* margin-top: 33px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <h3 class="box2">가운데로 정렬해주세요</h3>
+    </div>
+  </body>
+</html>
