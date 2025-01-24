@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gpt예제1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="wrap" class="flex flex-col justify-center items-center">
+      <div
+        id="card"
+        class="flex flex-col justify-center items-center bg-white shadow-lg w-full md:w-1/3"
+      >
+        <div class="flex flex-1 flex-[1_50%]">
+          <img src="dog.jpg" alt="강아지" />
+        </div>
+        <p>제목</p>
+        <p>내용</p>
+        <div>
+          <button
+            type="button"
+            class="w-28 rounded hover:bg-blue-500 bg-blue-300"
+          >
+            버튼
+          </button>
+        </div>
+      </div>
+      <div id="nav">
+        <div class="text-2xl font-serif font-bold">logo</div>
+        <div class="flex md:flex-col bg-gray-800 text-white hidden md:flex">
+          <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">mypage</a></li>
+            <li><a href="#">option</a></li>
+          </ul>
+        </div>
+        <button class="md:hidden bg-red-400 rounded-full w-8 h-8">☰</button>
+      </div>
+    </div>
+  </body>
+</html>
