@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>컴퍼넌트에 값 전달하기 (props이용)</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <p>컴퍼넌트에 값 전달하기(props이용)</p>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // 함수형 컨퍼넌트 정의
+      function Greeting(props) {
+        // JSX문법에서 JS사용하려면, 중괄호 사용 { }
+        return <h1 className="greeting">Hi~{props.sayWhat}</h1>;
+      }
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<Greeting sayWhat="Good morning!" />);
+      // 30번줄 방법보다는 28번 줄  방법이 더 심플함
+      root.render(React.createElement(Greeting, { sayWhat: "Good night!" }));
+    </script>
+  </body>
+</html>
