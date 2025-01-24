@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js 객체(Key-Value)</title>
+    <script>
+      // Js 객체
+      // key : 반드시 문자열(쌍따옴표는 사용안함) - JSON Key "key"
+      // value : 다양한 타입(number, string, function, object, ...)
+      // 객체 선언
+      let object = {
+        // 객체
+        // key : value
+        apple: 1000,
+        banana: 2000,
+      };
+      console.log(object["apple"]); // 객체 이름과 키를 사용해서 value에 접근
+      console.log(object.apple); // 동일한 방법임
+
+      let person = {
+        name: "홍길동",
+        age: 30,
+        action: () => {
+          console.log("액션배우 입니다.");
+        }, // 함수 타입
+        obj: object, // 객체 타입
+      };
+      person.action();
+
+      //연습문제
+      // student KV객체를 선언하고,
+      let student = {
+        key: 70,
+        eng: 80,
+        math: 90,
+        sum: (a, b, c) => {
+          return a + b + c;
+        },
+        avr: (a, b, c) => {
+          return a + b + c / 3;
+        },
+      };
+      // 이 학생의 국어, 영어, 수학 성적을 각각 70, 80,90으로 설정하고,
+      // 합산과 평균을 내는 익명함수를 각각 sum, avr로 설정하고,
+      // 익명함수를 통해, sum과 avr값을 출력하시오.
+      // 그리고 국어,영어,수학 점수도 각각 출력하시오.
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비교연산자</title>
+    <script>
+      // - 비교연산자 → 기준이 중요함 (왼쪽) // 반환값은 true / false (논리값:boolean 으로 나옴)
+      // - A > B : A가 B보다 큰가? ⇒ true / false
+      // - A < B : A가 B보다 작은가?
+      // - A ≥ : A가 B보다 크거나 같은가? ⇒ ~이거나 ( OR )
+      // - A ≤ B : A가 B보다 작거나 같은가?
+      // - A == B : A와 B가 같은가?
+      // - A ! = B : A와 B가 같지 않은가?
+
+      document.write(10 > 20);
+      document.write("<br>");
+      document.write(10 < 20);
+      document.write("<br>");
+
+      document.write(10 <= 20);
+      document.write("<br>");
+      // ~이거나 OR 로직 사용
+      document.write(10 < 20 || 10 == 20);
+      document.write("<br>");
+
+      document.write(10 >= 20);
+      document.write("<br>");
+      // ~이거나 OR 로직 사용
+      document.write(10 > 20 || 10 == 20);
+      document.write("<br>");
+
+      document.write(10 == 20);
+      document.write("<br>");
+      document.write(10 != 20);
+      document.write("<br>");
+    </script>
+  </head>
+  <body></body>
+</html>

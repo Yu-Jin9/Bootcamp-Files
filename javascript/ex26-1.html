@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01202연습문제(3)</title>
+    <script>
+      //연습문제
+      // student KV객체를 선언하고,
+      class KV {
+        // class안에서 변수타입, 함수를 앞에 명시해줄 필요 없음
+        kor = 70;
+        eng = 80;
+        math = 90;
+        sum() {
+          return this.kor + this.eng + this.math;
+        }
+        avr() {
+          return Number(this.sum()) / 3;
+        }
+      }
+      let student = new KV();
+
+      console.log("합산 : " + student.sum());
+      console.log("평균 : " + student.avr());
+      console.log(
+        "국어 : " +
+          student.kor +
+          " 영어 : " +
+          student.eng +
+          " 수학 : " +
+          student.math
+      );
+
+      // 이 학생의 국어, 영어, 수학 성적을 각각 70, 80,90으로 설정하고,
+      // 합산과 평균을 내는 익명함수를 각각 sum, avr로 설정하고,
+      // 익명함수를 통해, sum과 avr값을 출력하시오.
+      // 그리고 국어,영어,수학 점수도 각각 출력하시오.
+    </script>
+  </head>
+  <body></body>
+</html>

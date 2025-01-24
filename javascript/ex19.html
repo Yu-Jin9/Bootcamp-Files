@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문 - break문, continue문</title>
+    <!-- - break문 : 해당 반복문(for, while), switch문을 종료함 -->
+    <!-- - continue문 : 해단 회차(loop)를 건너뜀. 증감문으로 이동 -->
+    <script>
+      for (let i = 0; i < 10; i++) {
+        document.write(`i:${i}<br>`);
+        if (i > 5) {
+          // 6까지는 찍고 break;
+          break;
+        }
+      }
+
+      // for (let i = 0; i < 10; i++) {
+      //   continue;// continue를 만나게 되면 증감식으로 focus
+
+      //   document.write(`i:${i}<br>`);
+      // }
+
+      for (let i = 0; i < 10; i++) {
+        if (i % 2 == 0) {
+          // 2의 배수 조건
+          continue;
+        }
+        // 2의 배수가 아닌 것 : 홀수
+        document.write(`i:${i}<br>`);
+      }
+
+      // 이중 반복문에서 break, continue를 사용할 때 레이블을 사용함
+      loop1: for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+          document.write(`i : ${i}, j : ${j}<br>`);
+          break loop1;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

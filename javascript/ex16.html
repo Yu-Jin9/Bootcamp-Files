@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문 - switch문</title>
+    <script>
+      let num = 10;
+      switch (num) {
+        case 10: //10이면
+          document.write("10입니다.");
+          break;
+        case 20: //20이면
+          document.write("20입니다.");
+          break;
+
+        default: //그외의 경우
+          document.write("그외의 수 입니다.");
+          break;
+      }
+      // if else if 문으르 호환 가능!
+      if (num == 10) {
+      } else if (num == 20) {
+      } else {
+        // default
+      }
+
+      // 문자열 사용
+      let str = "abc";
+      switch (str) {
+        case "abc": // 비교에는 == 타입과 != ?????????????
+          document.write("abc 입니다.");
+          break;
+      }
+
+      // boolean 사용
+      let isLogin = true;
+      switch (isLogin) {
+        case true:
+          document.write("true 입니다.");
+          break;
+      }
+
+      // 랜덤수 발생하기
+      // Math.random()함수 : 0.0 ~ 0.999999... 까지의 임의수 발생
+      // 예) 1~6까지 (주사위)의 랜덤수 발생
+      let N = 6;
+      let dice = Math.floor(Math.random() * N + 1); //1~6 (+1은 괄호 밖으로 빼도 무관)
+      document.write("주사위 : " + dice);
+
+      // 연습문제 - switch case 문
+      // 1. 1~10까지의 랜덤한 정수 1개를 발생시키고, switch문에서 짝수, 홀수 여부를 출력
+      // 2. 주사위를 2개 던져서
+      // 첫번때 주사위는 10의 자리로, 두번째 주사위는 1의 자리로 만들어서 출력하시오
+      // 예) 5,2 => 52
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 데이터 타입
+      // number : 숫자(정수,실수) 자바:int long short byte float double
+      // string : 문자열,문자한자 자바:String char
+      // boolean : 논리형 true/false 자바:boolean
+      // undefined : 변수가 선언되지 않았을때, 값이 초기화되지 않았을때
+      // object : 객체타입, 배열(리스트),K-V객체  자바:클래스객체
+      // function : 함수타입(함수형 변수) 자바:익명객체, 람다식
+
+      let undefinedType; // 선언만 하고 값은 초기화 되지 않은 상태
+      document.write(typeof indefindType);
+      // document.write(type num );
+      document.write("<br>");
+
+      let number = 10;
+      document.write(typeof number + "<br>");
+
+      let string = "자바스크립트";
+      document.write(typeof string + "<br>");
+
+      let boolean = true;
+      document.write(typeof boolean + "<br>");
+
+      let array = [10, 20, 30]; //배열(리스트) (object 타입)
+      document.write(typeof array + "<br>");
+
+      // key - value 객치(object)
+      let object = { name: "뚜비", age: 7 };
+      document.write(typeof object);
+
+      // 함수형 function 변수는 주소값을 가지고 있다.
+      // 이와 같은 것을 참조형 변수라고 함 (주소값을 가지고 있는 것)
+      let myFunc = function () {
+        document.write("함수 호출됨");
+      };
+      let myFunc2 = function () {
+        document.write("함수 호출됨");
+      };
+
+      // 화살표 연산자를 이용한 익명한수 선언
+      let myFunc3 = () => {
+        document.write("함수 호출됨3");
+      };
+      myFunc3();
+    </script>
+  </head>
+  <body></body>
+</html>
