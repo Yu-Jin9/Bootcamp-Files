@@ -44,5 +44,70 @@ export const E4 = (
   </ul>
 );
 
+export const E5 = // E4와는 return이 있냐 없냐 차이
+  (
+    <ul>
+      {fruits.map((item, index) => {
+        <li key={index}>{item}</li>;
+      })}
+    </ul>
+  );
+
+// 소괄호 없이 return하는 경우
+//  : return 뒤에 바로 JSX나 값이 올 경우
+// 소괄호로 return하는 경우
+//  : 함수 컴퍼넌트로 return하는 경우
+// 여러 요소를 return하는 경우
+//  : 최상위 단일 요소로 만들어야 됨
+
+function handleClick() {
+  alert("버튼이 클릭되었습니다.");
+}
+
+export const E6 = (
+  <>
+    <h1>이벤트 처리</h1>
+    {/* html에서는 onclick이지만 JS에서느 onClick임 주의 */}
+    <button onClick={handleClick}>클릭하세요</button>
+  </>
+);
+
+// props로 데이터 전달하기
+export function Hello(props) {
+  // return 문과 같은 줄에 있을 때 소괄호가 필요 없음
+  return <h1>안녕하세요. {props.name}</h1>;
+}
+
+export function Button(props) {
+  return (
+    <button style={{ color: props.color }}>
+      <b>{props.children}</b>
+    </button>
+  );
+}
+
+/*
+export function Button(props) {
+  return (
+    // 백틱을 사용하는 이유 : 문자열 타입으로 전달하기 귀해서
+    // <button style={ color: `${props.color }`}>
+    <b>{props.children}</b>
+    // </button>
+  );
+}
+  */
+
+export function ConfirmDialog(props) {
+  return (
+    <div>
+      <p>확인 버튼 무르기</p>
+      <button color="green">
+        <span>확인</span>
+        <span>버튼</span>
+      </button>
+    </div>
+  );
+}
+
 export default E1;
 // export { E1, E2 };
