@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+div {
+  width: 100%;
+}
+
+#header {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+#nav {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+#section {
+  height: 200px;
+  width: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+#aside {
+  height: 200px;
+  width: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+#footer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}

@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .body {
+    @apply flex flex-row flex-wrap w-full  m-0 p-5 font-sans box-border bg-slate-100;
+  }
+  .navigation {
+    @apply flex justify-between items-center w-full h-14 p-0 bg-white border-b-4 border-gray-200;
+  }
+  .main-wrap {
+    @apply flex w-full flex-row flex-wrap;
+  }
+}
+
+@layer components {
+  /* product-box */
+  .product-wrap {
+    @apply flex flex-row flex-wrap w-full;
+  }
+  .product-box {
+    @apply box-border flex flex-col justify-around h-44 m-5 p-5 bg-white shadow-sm rounded-sm xl:max-w-[30%] md:max-w-[45%] w-[100%];
+  }
+  .box-header {
+    @apply flex flex-row;
+  }
+  .box-footer {
+    @apply flex flex-row justify-between;
+  }
+  .product-name {
+    @apply font-bold text-xl;
+  }
+  .product-price {
+    @apply font-bold text-lg;
+  }
+  .box-main,
+  .product-ex {
+    @apply w-96;
+  }
+  .product-type {
+    @apply text-center w-20  p-1 rounded-sm bg-sky-200;
+  }
+  .product-addButton {
+    @apply w-28 h-9 rounded-sm border-none bg-blue-700 text-white;
+  }
+}

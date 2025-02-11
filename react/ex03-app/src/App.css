@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Header의 설정 */
+.main-title {
+  @apply flex align-middle w-full h-20 pl-5 text-3xl font-bold;
+}
+.title {
+  @apply pl-4 text-blue-700;
+}
+
+/* nav 메뉴의 설정 */
+.nav-menu {
+  @apply flex list-none m-0 p-0;
+}
+.nav-item {
+  @apply relative;
+}
+.nav-item > a {
+  @apply block pl-4 pr-5;
+}
+.nav-item > a {
+  @apply hover:bg-sky-500;
+}
+
+/* 드롭 메뉴 설정 */
+.dropdown > li {
+  @apply w-48  hover:bg-sky-300;
+}
+.dropdown {
+  @apply hidden absolute;
+}
+.dropdown > a {
+  @apply block pl-2 pr-4 text-black;
+}
+
+/* 커서가 올라갔을 때 드롭 다운 표시 */
+.nav-item:hover > .dropdown {
+  @apply block bg-sky-100; /* 마우스 오버 시 표시 */
+}
