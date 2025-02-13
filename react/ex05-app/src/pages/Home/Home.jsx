@@ -1,13 +1,12 @@
-import "./Home.css";
 import "../../index.css";
 
-import Header from "./Header.jsx";
-import Main from "./Main.jsx";
-import Footer from "./Footer.jsx";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
 
 function Home() {
   return (
-    <div className="body">
+    <div className="flex flex-col h-screen">
       <Header />
       <Main />
       <Footer />
