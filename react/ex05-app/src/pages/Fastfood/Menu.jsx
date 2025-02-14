@@ -8,7 +8,7 @@ function Menu() {
         className="flex flex-row justify-between items-center w-full h-[10%] bg-white"
       >
         <Link to="/" className="flex w-[35%] h-[70%]">
-          <img src="/images/logo2.png" alt="logo" className="" />
+          <img src="/images/logo2.png" alt="logo" className="w-full" />
         </Link>
         <Link to="/" className="flex justify-end items-center w-fit h-fit">
           <img
