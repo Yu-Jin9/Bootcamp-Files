@@ -1,5 +1,5 @@
 {
-  "name": "mini-blog-app",
+  "name": "mini-blog-mongodb",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,17 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "components": "^0.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5",
-    "serve": "^14.2.4",
-    "styled": "^1.0.0",
+    "react-router-dom": "^7.2.0",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {

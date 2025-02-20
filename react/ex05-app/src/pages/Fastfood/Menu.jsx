@@ -22,7 +22,7 @@ function Menu() {
           </label>
         </Link>
       </div>
-      <hr />
+      <hr className="w-" />
       <div className="main"></div>
       <div className="text">
         <b>주문내역</b>
