@@ -15,7 +15,7 @@ app.use(express.json())
 
 //MongoDB Atlas 연결
 const MONGO_URI =
-  'mongodb+srv://ujh50188:<pw>@mongodb-cluster.xxjgj.mongodb.net/blog'
+  'mongodb+srv://ujh50188:godqhr921!@mongodb-cluster.xxjgj.mongodb.net/blog'
 mongoose
   //{ useNewUrlParser: true, useUnifiedTopology: true }
   .connect(MONGO_URI)
@@ -110,7 +110,6 @@ app.post('/posts/:id/comments', async (req, res) => {
     if (!post) {
       res.status(404).json({ message: 'Post Nolt Found' })
     }
-
     post.comments.push({ content })
     await post.save()
     res.json(post)
@@ -118,7 +117,23 @@ app.post('/posts/:id/comments', async (req, res) => {
     res.status(500).json({ errer: err.message })
   }
 })
-// 댓글 삭제
+
+// 댓글 삭제 (예시)
+app.delete('/posts/:id/comments/:commentId', async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id)
+    if (!post) {
+      return res.status(404).json({ message: 'Post Not Found' })
+    }
+    post.comments = post.comments.filter(
+      (comment) => comment._id.toString() !== req.params.commentId
+    )
+    await post.save()
+    res.json(post)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
 
 // 서버 실행
 app.listen(PORT, () => {

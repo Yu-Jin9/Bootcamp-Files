@@ -49,3 +49,18 @@ npm install -g gh-pages
 }
 
 npm run deploy
+
+### fetch 함수의 기본 형태
+
+fetch(url, options)
+.then(response => {
+// 서버로부터 받은 응답 처리
+})
+.catch(error => {
+// 요청 중 발생한 에러 처리
+})
+
+- fetch() : API 호출이나 서버 요청을 보낼 때 사용되는 함수.
+  : Promise 기반으로 비동기 작업 처리 -> 성공 (.then()) / 실패 (.catch())
+- url: 데이터를 요청할 서버의 URL.
+- options: 요청에 대한 설정. (GET, POST, 헤더, 바디 등)
