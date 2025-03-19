@@ -1,0 +1,31 @@
+/* .card {
+  width: 300px;
+  height: 400px;
+  background-color: skyblue;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotateX(10deg); 
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+} */
+
+.button {
+  padding: 12px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-5px); /* 눌렀을 때 위로 올라가는 효과 */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* 그림자 더 강조 */
+}
