@@ -86,7 +86,7 @@ ON duplicate KEY UPDATE 사원번호 = 'E15', 이름 = '이석진', 직위 = '�
 DELETE FROM 고객 WHERE 고객번호 = 'ZZZAA';
 
 -- 6. 4번에서 삽입한 'E15' 사원의 레코드를 삭제하시오.
-DELETE FROM 사원 WHERE 사원번호 = 'E15';
+DELETE FROM 사원 WHERE 사원번호 = 'E15'
 
 
 
