@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>계산기 프로그램</title>
+    <style>
+        * {
+          box-sizing: border-box;
+          font-family: 'Arial', sans-serif;
+        }
+
+        body {
+          background-color: #f2f2f2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+
+        .calculator {
+          background-color: #fff;
+          padding: 30px 40px;
+          border-radius: 16px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          width: 280px;
+        }
+
+        .calculator h2 {
+          text-align: center;
+          margin-bottom: 30px;
+          color: #333;
+        }
+
+        .field {
+          margin-bottom: 20px;
+        }
+
+        .field label {
+          display: block;
+          margin-bottom: 6px;
+          font-weight: bold;
+          color: #444;
+        }
+
+        .field input {
+          width: 100%;
+          padding: 10px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          background-color: #f5f5f5;
+          text-align: right;
+          font-size: 16px;
+        }
+
+        .result input {
+          background-color: #555;
+          color: white;
+          font-weight: bold;
+        }
+
+        .buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 10px;
+        }
+
+        .buttons button {
+          padding: 12px;
+          font-size: 16px;
+          font-weight: bold;
+          border: none;
+          border-radius: 8px;
+          color: white;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+        }
+
+        .buttons button.add,
+        .buttons button.sub,
+        .buttons button.mul,
+        .buttons button.div {
+          background-color: #007bff;
+        }
+
+        .buttons button.add:hover,
+        .buttons button.sub:hover,
+        .buttons button.mul:hover,
+        .buttons button.div:hover {
+          background-color: #0056b3;
+        }
+
+        .buttons button.reset {
+          background-color: #dc3545;
+        }
+
+        .buttons button.reset:hover {
+          background-color: #a71d2a;
+        }
+
+        /* 결과 메시지 박스 전체 */
+        #resultBox {
+            margin-top: 30px;
+            margin-left : 30px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            background-color: #f0f4f8;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #4caf50;
+            width: 150px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* 상태, 메시지 각각의 스타일 */
+        #result_status {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #result_message {
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<form action="#" method="post">
+    <div class="calculator">
+        <h2>계산기 프로그램</h2>
+
+        <div class="field">
+            <label for="num1">숫자 1</label>
+            <input type="number" id="num1" value="">
+        </div>
+
+        <div class="field">
+            <label for="num2">숫자 2</label>
+            <input type="number" id="num2" value="">
+        </div>
+
+        <div class="field result">
+            <label for="result">연산 결과</label>
+            <input type="number" id="result" value="" readonly>
+        </div>
+
+        <div class="buttons">
+            <button class="add" type="button" onclick="calculate('plus')">덧셈</button>
+            <button class="sub" type="button" onclick="calculate('minus')">뺄셈</button>
+            <button class="mul" type="button" onclick="calculate('mul')">곱셈</button>
+            <button class="div" type="button" onclick="calculate('div')">나눗셈</button>
+            <button class="reset" type="button" onclick="onDelete()">지우기</button>
+        </div>
+    </div>
+
+</form>
+
+<div id="resultBox">
+    <p id="result_status">응답상태:</p>
+    <p id="result_message">메시지:</p>
+</div>
+
+<!-- JS이용 (Restful API) -->
+
+<script>
+    function calculate(operation){
+        let inputNum1 = document.getElementById("num1");
+        let inputNum2 = document.getElementById("num2");
+        if (!inputNum1.value){ //널체크
+            alert('숫자1을 입력하세요.');
+            return;
+        } else if(!inputNum2.value) {
+            alert('숫자2를 입력하세요.');
+            return;
+        }
+        //fetch() : JS6에서 서버에 AJAX통신하는 함수
+        fetch(`http://localhost:8080/api/calc/${operation}`,{
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ // JSON 객체를 문자열로 만듦.
+                num1: Number(inputNum1.value),
+                num2: Number(inputNum2.value)
+            })
+        })
+        .then((response) => { //HTTP 응답객체
+            console.log(response);
+            return response.json();
+        })
+        .then((json) =>  { //JSON객체
+            // 서버에서 이렇게 보냄 -> { status: "ok", message: "로그인되었습니다." }
+            console.log(json);
+            //응답메시지 표시하기
+            document.getElementById("result_status").innerText
+                 = json.status;
+            document.getElementById("result_message").innerText
+                 = json.message;
+            document.getElementById("result").value = json.result ?? ""; // 서버에서 result도 보내는 경우
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+
+    }
+    function onDelete() {
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+        document.getElementById("result").value = "";
+        document.getElementById("result_status").innerText = "응답상태:";
+        document.getElementById("result_message").innerText = "메시지:";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자판기 프로그램 _ 메인 화면</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+    }
+
+    body {
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 500px;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+        background: linear-gradient(135deg, #e53935, #c62828);
+        color: white;
+        padding: 16px;
+        text-align: center;
+        position: relative;
+    }
+
+    .header h1 {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .header-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-list-toggle {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .product-list-toggle .triangle {
+        margin-right: 6px;
+    }
+
+    .language-toggle {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 4px;
+    }
+
+    .toggle-switch {
+        position: relative;
+        width: 50px;
+        height: 24px;
+        margin: 0 8px;
+    }
+
+    .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+    input:checked + .slider {
+        background-color: #f44336;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #f44336;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+
+    .collapse-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+    }
+
+    .content {
+        padding: 24px;
+    }
+
+    .empty-state {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .product-count {
+        background-color: #fff8f8;
+        border: 1px solid #ffcdd2;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 20px;
+        color: #d32f2f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+    }
+
+    .product-count .warning {
+        margin-right: 8px;
+        color: #f44336;
+    }
+
+    .add-product-btn {
+        background: linear-gradient(135deg, #f44336, #e53935);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 20px;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .add-product-btn:hover {
+        background: linear-gradient(135deg, #e53935, #c62828);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(229, 57, 53, 0.3);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>★ 자판기 프로그램 ★</h1>
+    <div class="header-controls">
+      <div class="product-list-toggle">
+        <span class="triangle">▼</span>
+        <span>자판기 상품 목록</span>
+      </div>
+      <div class="language-toggle">
+        <span>한글</span>
+        <label class="toggle-switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+        <span>ENG</span>
+      </div>
+      <button class="collapse-btn">
+        <span>−</span>
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <div class="empty-state">
+      상품 목록이 비어있습니다.
+    </div>
+    <div class="product-count">
+      <span class="warning">▲</span>
+      총 0 개의 상품이 있습니다.
+    </div>
+    <button class="add-product-btn">
+      상품 추가하기!
+    </button>
+  </div>
+</div>
+</body>
+</html>
