@@ -1,159 +1,220 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자판기 상품 수정</title>
-  <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자판기 상품 수정</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+        }
 
-    body {
-        background-color: #f5f5f5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    .container {
-        width: 100%;
-        max-width: 500px;
-        background: white;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-        position: relative;
-    }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
 
-    .header {
-        background: linear-gradient(135deg, #e53935, #c62828);
-        color: white;
-        padding: 24px 20px;
-        text-align: center;
-        position: relative;
-    }
+        .header {
+            background: linear-gradient(135deg, #e53935, #c62828);
+            color: white;
+            padding: 24px 20px;
+            text-align: center;
+            position: relative;
+        }
 
-    .header h1 {
-        font-size: 24px;
-        font-weight: 700;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
 
-    .menu-dots {
-        position: absolute;
-        top: 16px;
-        right: 16px;
-        font-size: 20px;
-        color: white;
-        cursor: pointer;
-        background: none;
-        border: none;
-        padding: 4px;
-    }
+        .menu-dots {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
 
-    .form-content {
-        padding: 24px;
-    }
+        .form-content {
+            padding: 24px;
+        }
 
-    .form-group {
-        margin-bottom: 16px;
-    }
+        .form-group {
+            margin-bottom: 16px;
+        }
 
-    .form-label {
-        display: block;
-        color: white;
-        font-size: 16px;
-        font-weight: 500;
-        margin-bottom: 8px;
-    }
+        .form-label {
+            display: block;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
 
-    .form-control {
-        width: 100%;
-        padding: 12px 16px;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-        font-size: 16px;
-        transition: all 0.3s ease;
-    }
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
 
-    .form-control:focus {
-        border-color: #e53935;
-        box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
-        outline: none;
-    }
+        .form-control:focus {
+            border-color: #e53935;
+            box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
+            outline: none;
+        }
 
-    .button-group {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 24px;
-        gap: 12px;
-    }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+            gap: 12px;
+        }
 
-    .btn {
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-    .btn-primary {
-        background-color: #212121;
-        color: white;
-        border: none;
-        flex: 1;
-    }
+        .btn-primary {
+            background-color: #212121;
+            color: white;
+            border: none;
+            flex: 1;
+        }
 
-    .btn-primary:hover {
-        background-color: #000;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+        .btn-primary:hover {
+            background-color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-    .btn-secondary {
-        background-color: white;
-        color: #333;
-        border: 1px solid #ddd;
-        flex: 1;
-    }
+        .btn-secondary {
+            background-color: white;
+            color: #333;
+            border: 1px solid #ddd;
+            flex: 1;
+        }
 
-    .btn-secondary:hover {
-        background-color: #f5f5f5;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-  </style>
+        .btn-secondary:hover {
+            background-color: #f5f5f5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .hrefStyle {
+            text-decoration : none;
+        }
+
+    </style>
 </head>
 <body>
 <div class="container">
-  <div class="header">
-    <h1>자판기 상품 수정</h1>
-    <button class="menu-dots">⋯</button>
-  </div>
-  <div class="form-content">
-    <div class="form-group">
-      <label class="form-label" style="color:#333;">상품명:</label>
-      <input type="text" class="form-control" value="상추버거" placeholder="상품명을 입력하세요">
+    <div class="header">
+        <h1>자판기 상품 수정</h1>
+        <button class="menu-dots">⋯</button>
     </div>
-    <div class="form-group">
-      <label class="form-label" style="color:#333;">가격:</label>
-      <input type="text" class="form-control" value="3000" placeholder="가격을 입력하세요">
+    <div class="form-content">
+        <div class="form-group">
+            <label class="form-label" style="color:#333;">상품명:</label>
+            <input id="name" type="text" class="form-control" placeholder="상품명을 입력하세요">
+        </div>
+        <div class="form-group">
+            <label class="form-label" style="color:#333;">가격:</label>
+            <input id="price" type="text" class="form-control" placeholder="가격을 입력하세요">
+        </div>
+        <div class="form-group">
+            <label class="form-label" style="color:#333;">유통기한:</label>
+            <input id="limit_date" type="date" class="form-control" placeholder="유통기한을 입력하세요">
+        </div>
+        <div class="button-group">
+            <button class="btn btn-primary" onclick="onModify()">상품 수정 완료!</button>
+            <a href="/" class="hrefStyle"><button type="button" class="btn btn-secondary">돌아가기</button></a>
+        </div>
     </div>
-    <div class="form-group">
-      <label class="form-label" style="color:#333;">유통기한:</label>
-      <input type="text" class="form-control" value="2023-12-31" placeholder="유통기한을 입력하세요">
-    </div>
-    <div class="button-group">
-      <button class="btn btn-primary">상품 수정 완료!</button>
-      <button class="btn btn-secondary">돌아가기</button>
-    </div>
-  </div>
 </div>
+
+<script>
+    function getQueryParam(key) {
+      return new URLSearchParams(window.location.search).get(key);
+    }
+
+    const productName = getQueryParam('name');
+
+    window.onload = function () {
+      if (!productName) {
+        alert("수정할 상품명이 없습니다.");
+        return;
+      }
+
+      fetch(`http://localhost:8080/api/product?name=${productName}`)
+        .then(res => res.json())
+        .then(data => {
+          const result = data.result;
+          document.getElementById("name").value = result.name;
+          document.getElementById("price").value = result.price;
+          document.getElementById("limit_date").value = result.limit_date;
+        })
+        .catch(err => {
+          console.error("데이터 불러오기 실패:", err);
+        });
+    }
+
+    function onModify() {
+      const name = document.getElementById("name").value;
+      const price = document.getElementById("price").value;
+      const limit_date = document.getElementById("limit_date").value;
+
+      if (!name || !price || !limit_date) {
+        alert("빈칸이 존재합니다.");
+        return;
+      }
+
+      fetch(`http://localhost:8080/api/product/modify?originalName=${productName}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          price: Number(price),
+          limit_date
+        })
+      })
+      .then(res => res.json())
+      .then(json => {
+        alert("수정이 완료되었습니다!");
+        window.location.href = '/';
+      })
+      .catch(err => {
+        console.error("수정 실패:", err);
+        alert("수정 중 오류가 발생했습니다.");
+      });
+    }
+</script>
 </body>
 </html>

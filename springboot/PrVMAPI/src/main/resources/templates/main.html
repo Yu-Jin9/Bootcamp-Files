@@ -179,11 +179,100 @@
         justify-content: center;
         align-items: center;
     }
-
     .add-product-btn:hover {
         background: linear-gradient(135deg, #e53935, #c62828);
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(229, 57, 53, 0.3);
+    }
+    .hrefText {
+        text-decoration: none;
+    }
+
+    /* 여기부터 상품 리스트 아이템 스타일 추가 */
+    .product-list {
+        margin-bottom: 20px;
+    }
+
+    .product-item {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.2s ease;
+    }
+
+    .product-item:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .product-item-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-info {
+        flex-grow: 1;
+    }
+
+    .product-name {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 6px;
+    }
+
+    .product-price {
+        font-size: 15px;
+        font-weight: 700;
+        color: #e53935;
+        margin-bottom: 4px;
+    }
+
+    .product-date {
+        font-size: 13px;
+        color: #757575;
+    }
+
+    .product-actions {
+        display: flex;
+        gap: 8px;
+    }
+
+    .product-actions button,
+    .product-actions a {
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-delete-btn {
+        background-color: #ffebee;
+        color: #d32f2f;
+        border: 1px solid #ffcdd2;
+    }
+
+    .product-delete-btn:hover {
+        background-color: #ffcdd2;
+    }
+
+    .product-modify-btn {
+        background-color: #f5f5f5;
+        color: #333;
+        border: 1px solid #ddd;
+    }
+
+    .product-modify-btn:hover {
+        background-color: #e0e0e0;
     }
   </style>
 </head>
@@ -197,9 +286,9 @@
         <span>자판기 상품 목록</span>
       </div>
       <div class="language-toggle">
-        <span>한글</span>
+        <span id="lang-label">한글</span>
         <label class="toggle-switch">
-          <input type="checkbox" checked>
+          <input type="checkbox" id="language-toggle">
           <span class="slider"></span>
         </label>
         <span>ENG</span>
@@ -210,17 +299,90 @@
     </div>
   </div>
   <div class="content">
-    <div class="empty-state">
-      상품 목록이 비어있습니다.
+    <div id="product-list" class="product-list">
+      <!-- 상품 목록이 여기에 동적으로 추가됩니다. -->
     </div>
     <div class="product-count">
       <span class="warning">▲</span>
-      총 0 개의 상품이 있습니다.
+      총 <span id="product-count">0</span>개의 상품이 있습니다.
     </div>
-    <button class="add-product-btn">
-      상품 추가하기!
-    </button>
+    <a href="/addPage" class="hrefText">
+      <button class="add-product-btn">
+        상품 추가하기!
+      </button>
+    </a>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetchProducts();
+
+    document.getElementById('language-toggle').addEventListener('change', function() {
+      const langLabel = document.getElementById('lang-label');
+      if (this.checked) {
+        langLabel.textContent = 'English';
+      } else {
+        langLabel.textContent = '한글';
+      }
+    });
+  });
+
+  function fetchProducts() {
+    fetch('http://localhost:8080/api/products')
+      .then(response => response.json())
+      .then(data => {
+        const productList = document.getElementById('product-list');
+        const productCount = document.getElementById('product-count');
+        productList.innerHTML = '';
+
+        if (data.length === 0) {
+          productList.innerHTML = '<div class="empty-state">상품 목록이 비어있습니다.</div>';
+        } else {
+          data.forEach(product => {
+            const productItem = document.createElement('div');
+            productItem.className = 'product-item';
+
+            // 가격에 천 단위 콤마 추가
+            const formattedPrice = product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            productItem.innerHTML = `
+              <div class="product-item-content">
+                <div class="product-info">
+                  <div class="product-name">${product.name}</div>
+                  <div class="product-price">${formattedPrice}원</div>
+                  <div class="product-date">유통기한: ${product.limit_date}</div>
+                </div>
+                <div class="product-actions">
+                  <a href="/modifyPage?name=${product.name}">수정</a>
+                  <button class="product-delete-btn" onclick="deleteProduct('${product.name}')">삭제</button>
+                </div>
+              </div>
+            `;
+            productList.appendChild(productItem);
+          });
+        }
+
+        productCount.textContent = data.length;
+      })
+      .catch(error => console.error('상품 목록을 불러오는 데 실패했습니다.', error));
+  }
+
+  function deleteProduct(name) {
+    if (confirm(`"${name}" 상품을 삭제하시겠습니까?`)) {
+      fetch(`http://localhost:8080/api/product/delete?name=${name}`, {
+        method: 'DELETE',
+      })
+      .then(response => {
+        if (response.ok) {
+          fetchProducts();
+        } else {
+          alert('상품 삭제에 실패했습니다.');
+        }
+      })
+      .catch(error => console.error('상품 삭제 중 오류가 발생했습니다.', error));
+    }
+  }
+</script>
 </body>
 </html>

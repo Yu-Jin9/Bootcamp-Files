@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/calc")
 public class CalcController {
 
-
-
     @PostMapping("/{operation}")
     @ResponseBody
     public ResDTO calc( @PathVariable String operation,@RequestBody ReqDTO reqDto) {

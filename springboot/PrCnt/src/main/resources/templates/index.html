@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+</head>
+<body>
+
+<!-- server에 있는 값이 렌더됨 -->
+  <h3 id="count" th:text="${ count }" >카운트 : 0</h3>
+  <button  type="button" onclick="plus()" >더하기</button>
+  <button  type="button" onclick="minus()" >빼기</button>
+
+  <script>
+    function plus() {
+<!--  get 방식 server가 restful api가 아님 -->
+      window.location.href = "/plus";
+<!--   // http://localhost:8080/plus   -->
+    }
+    function minus() {
+      window.location.href = "/minus";
+    }
+
+  </script>
+
+</body>
+</html>
