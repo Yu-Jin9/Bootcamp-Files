@@ -383,6 +383,87 @@
       .catch(error => console.error('상품 삭제 중 오류가 발생했습니다.', error));
     }
   }
+
+  let currentLanguage = 'ko'; // 기본 언어
+
+  document.addEventListener('DOMContentLoaded', function() {
+    fetchProducts();
+
+    document.getElementById('language-toggle').addEventListener('change', function() {
+      const langLabel = document.getElementById('lang-label');
+      if (this.checked) {
+        currentLanguage = 'en';
+        langLabel.textContent = 'English';
+      } else {
+        currentLanguage = 'ko';
+        langLabel.textContent = '한글';
+      }
+      fetchProducts(); // 언어 변경 후 목록 다시 렌더링
+    });
+  });
+
+  function fetchProducts() {
+    fetch('http://localhost:8080/api/products')
+      .then(response => response.json())
+      .then(data => {
+        const productList = document.getElementById('product-list');
+        const productCount = document.getElementById('product-count');
+        productList.innerHTML = '';
+
+        const emptyMessage = currentLanguage === 'en' ? 'No products available.' : '상품 목록이 비어있습니다.';
+        const unitText = currentLanguage === 'en' ? 'products' : '개의 상품이 있습니다.';
+        const priceUnit = currentLanguage === 'en' ? 'KRW' : '원';
+        const expireText = currentLanguage === 'en' ? 'Expire date' : '유통기한';
+
+        if (data.length === 0) {
+          productList.innerHTML = `<div class="empty-state">${emptyMessage}</div>`;
+        } else {
+          data.forEach(product => {
+            const productItem = document.createElement('div');
+            productItem.className = 'product-item';
+
+            const formattedPrice = product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            productItem.innerHTML = `
+              <div class="product-item-content">
+                <div class="product-info">
+                  <div class="product-name">${product.name}</div>
+                  <div class="product-price">${formattedPrice}${priceUnit}</div>
+                  <div class="product-date">${expireText}: ${product.limit_date}</div>
+                </div>
+                <div class="product-actions">
+                  <a href="/modifyPage?name=${product.name}">${currentLanguage === 'en' ? 'Edit' : '수정'}</a>
+                  <button class="product-delete-btn" onclick="deleteProduct('${product.name}')">${currentLanguage === 'en' ? 'Delete' : '삭제'}</button>
+                </div>
+              </div>
+            `;
+            productList.appendChild(productItem);
+          });
+        }
+
+        productCount.textContent = data.length;
+        document.querySelector('.product-count').innerHTML =
+          `<span class="warning">▲</span> 총 <span id="product-count">${data.length}</span> ${unitText}`;
+      })
+      .catch(error => console.error('상품 목록을 불러오는 데 실패했습니다.', error));
+  }
+
+  function deleteProduct(name) {
+    if (confirm(`"${name}" ${currentLanguage === 'en' ? 'will be deleted. Proceed?' : '상품을 삭제하시겠습니까?'}`)) {
+      fetch(`http://localhost:8080/api/product/delete?name=${name}`, {
+        method: 'DELETE',
+      })
+      .then(response => {
+        if (response.ok) {
+          fetchProducts();
+        } else {
+          alert(currentLanguage === 'en' ? 'Failed to delete the product.' : '상품 삭제에 실패했습니다.');
+        }
+      })
+      .catch(error => console.error('상품 삭제 중 오류가 발생했습니다.', error));
+    }
+  }
 </script>
+
 </body>
 </html>
