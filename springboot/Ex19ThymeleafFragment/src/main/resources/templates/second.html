@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>second.html의 타이틀 입니다.</title>
+    <!-- 자체 타이틀이 있으면, head.html의 타이틀은 무시됨 -->
+
+    <th:block th:replace="fragments/head :: headFragment" ></th:block>
+
+</head>
+<body>
+
+    <!-- header의 메타 정보 -->
+    <header th:replace="fragments/head :: headerFragment"  ></header>
+
+    <!--  구조와 이 틀을 지키면 불필요한 코드를 중복해서 적지 않아도 됨  -->
+    <!--  나머지 구조/틀은 동일하고 이 <p></p>부분만 바꾸면 됨?  -->
+    <p>second.html의 자체 콘텐츠</p>
+
+    <!-- footer의 메타 정보 -->
+    <footer th:replace="fragments/head :: footerFragment"  ></footer>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+# logging.level.com.study.Ex20Logger 이러한 것을
+# 이렇게 축약해서 적을 수 있음 
+# 여기서 주의할 것은 꼭 'tab'을 사용해서 오타 없이 잘 작성해야 함
+logging:
+  level:
+    com:
+      study:
+        ExLogger: debug
+  pattern:
+    file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
+    level:
+
+  file:
+    name: logs/mylog.log  #root 밑에 (src 폴더와 동일 경로[같은 단계에 위치])
+
+  logback:
+    max-history: 30   #30일 동안 유지한다는 의미
+    file-name-pattern: "logs/mylog.%d{yyyy-MM-dd}.%i"   #log가 현재의 날짜와 함께 찍힘
+    
+    
+#             날찌 형식           
+#     file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
