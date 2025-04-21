@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 목록보기</title>
+  <style>
+    * {
+      margin: 0 auto;
+      padding : 0;
+      overflow : hidden;
+    }
+    td, h2 {
+      text-align : center;
+    }
+    table, td {
+      width : 500px;
+      border : 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h2>게시판 글 목록</h2>
+  <-- cellpadding, cellspacing 0으로 설정하면 표의 테두리를 두줄이 아닌 한 줄로 모아줌-->
+  <table cellpadding="0" cellspacing="0">
+    <thead>
+      <tr>
+        <td>순번</td>
+        <td>이름</td>
+        <td>제목</td>
+        <td>날짜시간</td>
+        <td>조회수</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="dto, status : ${ list }">
+        <td th:text="${ status.count }">1</td>
+        <td th:text="${ dto.boardName }">홍길동</td>
+        <td><a th:href="|/contentForm?boardIdx=${dto.boardIdx}|">글제목</a></td>
+        <td th:text="${ temporals.format(dto.boardDate, 'yyyy-MM-dd HH:mm') }">2025-04-21 10:10:00</td>
+        <td th:text="${ dto.boardHit }">10</td>
+      </tr>
+      <tr>
+        <td colspan="5"><a href="/board/writeForm">글작성</a></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
